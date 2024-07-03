@@ -10,6 +10,14 @@ module.exports = {
       spacing: {
         '90vh': '90vh',
       },
+      colors: {
+        'soft-pink': '#fbdfe9',
+        'pink-primary': '#ef7ca9',
+        'pink-accent': '#e61252',
+        'yellow-primary': '#ffd644',
+        'green-primary': '#18381d',
+        'green-secondary': '#7eaa7e',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

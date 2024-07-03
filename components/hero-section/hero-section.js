@@ -1,0 +1,26 @@
+import Button from '../button/button';
+
+export default function HeroSection() {
+  return (
+    <section className='flex flex-col items-center justify-center relative overflow-hidden'>
+      <div className='flex flex-col items-center w-screen lg:absolute lg:text-white'>
+        <h2 className='text-3xl text-center w-full'>Corazonada Tattoo</h2>
+        <h1 className='text-5xl text-center w-full text-pink-accent mb-5'>
+          The best tattoo studio in Playa
+        </h1>
+        <Button href='#'>Book now</Button>
+      </div>
+      <div className='shadow-xl max-h-dvh w-full'>
+        <video
+          playsInline
+          autoPlay
+          loop
+          muted
+          className='h-full w-full object-cover'
+        >
+          <source src='/videos/main.mp4' type='video/mp4' />
+        </video>
+      </div>
+    </section>
+  );
+}
