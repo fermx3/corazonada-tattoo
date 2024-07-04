@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       spacing: {
         '90vh': '90vh',
-        'fill-navbar': 'calc(100svh - 5rem)',
+        'fill-navbar': 'calc(100dvh - 5rem)',
       },
       colors: {
         'soft-pink': '#fbdfe9',

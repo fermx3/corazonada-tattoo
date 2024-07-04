@@ -37,8 +37,6 @@ h6 {
 .glass {
   /* From https://css.glass */
   background: rgba(251, 223, 233, 0.77);
-  /* border-radius: 16px; */
-  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   backdrop-filter: blur(7px);
 }
 

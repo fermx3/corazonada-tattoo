@@ -26,22 +26,28 @@ const Navbar = () => {
       <div className='hidden md:block'>
         <Button href='/#contacto'>Contacto</Button>
       </div>
-      <div className='md:hidden inline-block' onClick={handleClick}>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6 md:hidden'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M4 6h16M4 12h16m-7 6h7'
-          />
-        </svg>
-      </div>
+      {isMenuOpen ? (
+        <div className='md:hidden inline-block' onClick={handleClick}>
+          <Image src='/icons/close.svg' width={24} height={24} alt='' />
+        </div>
+      ) : (
+        <div className='md:hidden inline-block' onClick={handleClick}>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-6 w-6 md:hidden'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth={2}
+              d='M4 6h16M4 12h16m-7 6h7'
+            />
+          </svg>
+        </div>
+      )}
       {isMenuOpen && (
         <div className='h-fill-navbar w-full py-20 flex flex-col text-center justify-center'>
           <ul className='mb-20 text-3xl flex flex-col gap-10'>
