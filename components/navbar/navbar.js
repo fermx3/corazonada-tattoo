@@ -11,7 +11,7 @@ const links = [
 
 const Navbar = () => {
   return (
-    <nav className='sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50'>
+    <nav className='glass sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50'>
       <div className='logo'>
         <Link href='/'>
           <Image src='/logo.png' width={77} height={77} alt='' />

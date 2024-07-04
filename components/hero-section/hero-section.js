@@ -8,7 +8,7 @@ export default function HeroSection() {
         <h1 className='text-5xl text-center w-full text-pink-accent mb-5'>
           The best tattoo studio in Playa
         </h1>
-        <Button href='#'>Book now</Button>
+        <Button href='/#contacto'>Book now</Button>
       </div>
       <div className='shadow-xl max-h-dvh w-full'>
         <video
