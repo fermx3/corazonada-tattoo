@@ -22,6 +22,11 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'estudio-privado': 'url("https://picsum.photos/id/102/1200/800")',
+        contacto: 'url("https://picsum.photos/1200/800")',
+      },
+      gridTemplateColumns: {
+        responsive: 'repeat(auto-fit, minmax(320px, 1fr))',
       },
     },
   },

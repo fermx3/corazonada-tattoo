@@ -2,8 +2,8 @@ import Button from '../button/button';
 
 export default function HeroSection() {
   return (
-    <section className='flex flex-col items-center justify-center relative overflow-hidden'>
-      <div className='flex flex-col items-center w-screen lg:absolute lg:text-white'>
+    <section className='flex lg:flex-col items-center justify-center relative overflow-hidden flex-col-reverse'>
+      <div className='flex flex-col items-center w-screen lg:absolute lg:text-white lg:p-0 py-20'>
         <h2 className='text-3xl text-center w-full'>Corazonada Tattoo</h2>
         <h1 className='text-5xl text-center w-full text-pink-accent mb-5'>
           The best tattoo studio in Playa

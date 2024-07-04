@@ -15,7 +15,7 @@ export default function Home() {
       <TatuadoresInvitadosSection />
       <BlogSection />
       <ContactoSection />
-      <InstagramSection />
+      {/* <InstagramSection /> */}
     </main>
   );
 }
