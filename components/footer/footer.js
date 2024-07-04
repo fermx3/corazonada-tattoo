@@ -1,8 +1,22 @@
 import Image from 'next/image';
 import HomeLinks from '../navbar/home-links';
 import Link from 'next/link';
+import SocialMediaLink from './social-media-link';
 
 const year = new Date().getFullYear();
+
+const socialMedia = [
+  {
+    name: 'Instagram',
+    link: 'https://www.instagram.com/corazonadatattoo/',
+    icon: '/icons/instagram.svg',
+  },
+  {
+    name: 'Facebook',
+    link: 'https://www.facebook.com/corazonadatattoo',
+    icon: '/icons/facebook.svg',
+  },
+];
 
 export default function Footer() {
   return (
@@ -39,72 +53,16 @@ export default function Footer() {
         <div className='hidden md:block'>
           <p className='font-bold mb-2'>Síguenos</p>
           <div className='flex gap-1'>
-            <div className='w-fit'>
-              <Link
-                href='https://www.instagram.com/corazonadatattoo/'
-                target='_blank'
-                rel='noreferrer'
-                className='hover:underline'
-              >
-                <Image
-                  src='/icons/instagram.svg'
-                  width={20}
-                  height={20}
-                  alt=''
-                />
-              </Link>
-            </div>
-            <div className='w-fit'>
-              <Link
-                href='https://www.facebook.com/corazonadatattoo'
-                target='_blank'
-                rel='noreferrer'
-                className='hover:underline'
-              >
-                <Image
-                  src='/icons/facebook.svg'
-                  width={20}
-                  height={20}
-                  alt=''
-                />
-              </Link>
-            </div>
+            {socialMedia.map((link, index) => (
+              <SocialMediaLink key={index} link={link} />
+            ))}
           </div>
         </div>
         <div className='md:hidden block'>
           <div className='flex flex-col gap-1'>
-            <div className='w-full flex'>
-              <Link
-                href='https://www.instagram.com/corazonadatattoo/'
-                target='_blank'
-                rel='noreferrer'
-                className='hover:underline w-full flex items-center gap-2 my-3'
-              >
-                <Image
-                  src='/icons/instagram.svg'
-                  width={40}
-                  height={40}
-                  alt=''
-                />
-                <p>Síguenos en Instagram</p>
-              </Link>
-            </div>
-            <div className='w-fit'>
-              <Link
-                href='https://www.facebook.com/corazonadatattoo'
-                target='_blank'
-                rel='noreferrer'
-                className='hover:underline w-full flex items-center gap-2 my-3'
-              >
-                <Image
-                  src='/icons/facebook.svg'
-                  width={40}
-                  height={40}
-                  alt=''
-                />
-                <p>Síguenos en Facebook</p>
-              </Link>
-            </div>
+            {socialMedia.map((link, index) => (
+              <SocialMediaLink key={index} link={link} full />
+            ))}
           </div>
         </div>
       </div>
