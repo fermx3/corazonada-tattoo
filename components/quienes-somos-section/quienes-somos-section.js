@@ -17,7 +17,7 @@ export default function QuienesSomosSection() {
       </div>
       <div className='max-w-lg text-white'>
         <h3 className='text-2xl mb-3'>¿Quiénes somos?</h3>
-        <h2 className='text-6xl font-bold mb-3 text-soft-pink'>
+        <h2 className='text-6xl mb-3 text-soft-pink'>
           El mejor estudio privado
         </h2>
         <p>

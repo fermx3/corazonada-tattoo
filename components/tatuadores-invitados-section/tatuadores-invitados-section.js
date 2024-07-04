@@ -46,7 +46,7 @@ export default function TatuadoresInvitadosSection() {
         </div>
         <div className='max-w-lg text-black'>
           <h3 className='text-2xl mb-3'>Tatuadores invitados</h3>
-          <h2 className='text-6xl font-bold mb-3 text-pink-accent'>
+          <h2 className='text-6xl mb-3 text-pink-accent'>
             Tatuadores de todo el mundo
           </h2>
           <p>

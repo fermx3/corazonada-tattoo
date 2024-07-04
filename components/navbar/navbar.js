@@ -3,6 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 import Button from '../button/button';
 
+const links = [
+  { name: '¿Quiénes somos?', href: '/#quienes-somos' },
+  { name: 'Tatuadores invitados', href: '/#tatuadores-invitados' },
+  { name: 'Blog', href: '/#blog' },
+];
+
 const Navbar = () => {
   return (
     <nav className='sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50'>
@@ -12,15 +18,11 @@ const Navbar = () => {
         </Link>
       </div>
       <ul className='md:flex gap-x-10 hidden'>
-        <li>
-          <Link href='/#quienes-somos'>¿Quiénes somos?</Link>
-        </li>
-        <li>
-          <Link href='/#tatuadores-invitados'>Tatuadores invitados</Link>
-        </li>
-        <li>
-          <Link href='/#blog'>Blog</Link>
-        </li>
+        {links.map((link) => (
+          <li key={link.name} className='uppercase'>
+            <Link href={link.href}>{link.name}</Link>
+          </li>
+        ))}
       </ul>
       <div className='hidden md:block'>
         <Button href='/#contacto'>Contacto</Button>
