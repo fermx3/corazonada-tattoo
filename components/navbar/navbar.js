@@ -1,33 +1,32 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useState } from 'react';
 import Button from '../button/button';
-
-const links = [
-  { name: '¿Quiénes somos?', href: '/#quienes-somos' },
-  { name: 'Tatuadores invitados', href: '/#tatuadores-invitados' },
-  { name: 'Blog', href: '/#blog' },
-];
+import HomeLinks from './home-links';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className='glass sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50'>
+    <nav className='glass sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50 flex-wrap'>
       <div className='logo'>
         <Link href='/'>
           <Image src='/logo.png' width={77} height={77} alt='' />
         </Link>
       </div>
       <ul className='md:flex gap-x-10 hidden'>
-        {links.map((link) => (
-          <li key={link.name} className='uppercase'>
-            <Link href={link.href}>{link.name}</Link>
-          </li>
-        ))}
+        <HomeLinks />
       </ul>
       <div className='hidden md:block'>
         <Button href='/#contacto'>Contacto</Button>
       </div>
-      <div className='md:hidden inline-block'>
+      <div className='md:hidden inline-block' onClick={handleClick}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='h-6 w-6 md:hidden'
@@ -43,6 +42,16 @@ const Navbar = () => {
           />
         </svg>
       </div>
+      {isMenuOpen && (
+        <div className='h-fill-navbar w-full py-20 flex flex-col text-center justify-center'>
+          <ul className='mb-20 text-3xl flex flex-col gap-10'>
+            <HomeLinks onClick={handleClick} />
+          </ul>
+          <Button href='/#contacto' onClick={handleClick}>
+            Contacto
+          </Button>
+        </div>
+      )}
     </nav>
   );
 };
