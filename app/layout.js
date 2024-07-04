@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Corazada Tattoo Studio',
+  title: 'Corazonada Tattoo Studio',
   description: 'Tattoo studio in Playa del Carmen, México',
 };
 
