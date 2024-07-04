@@ -2,6 +2,7 @@ import { Kavoon, Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar/navbar';
 import WhatsappButton from '@/components/whatsapp-button/whatsapp-button';
+import Footer from '@/components/footer/footer';
 
 const kavoon = Kavoon({
   weight: '400',
@@ -10,7 +11,7 @@ const kavoon = Kavoon({
 });
 
 const poppins = Poppins({
-  weight: '400',
+  weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['latin'],
   variable: '--font-poppins',
 });
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className={`${kavoon.variable} ${poppins.className}`}>
         <Navbar />
         {children}
+        <Footer />
         <WhatsappButton />
       </body>
     </html>

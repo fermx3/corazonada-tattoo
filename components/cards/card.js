@@ -13,7 +13,7 @@ export default function Card({ image, title, desc, url }) {
         />
       </div>
       <div className='p-10 pb-7 flex flex-col justify-between gap-5'>
-        <h3 className='bold text-2xl'>{title}</h3>
+        <h3 className='font-bold text-2xl'>{title}</h3>
         <p className='mb-10'>{desc}</p>
         <Button href={url}>Ver más</Button>
       </div>
