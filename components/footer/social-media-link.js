@@ -9,7 +9,7 @@ export default function SocialMediaLink({ link, index, full = false }) {
         href={link.link}
         target='_blank'
         rel='noreferrer'
-        className={full && 'w-full flex items-center gap-2 my-3'}
+        className={full ? 'w-full flex items-center gap-2 my-3' : ''}
       >
         <Image
           src={link.icon}

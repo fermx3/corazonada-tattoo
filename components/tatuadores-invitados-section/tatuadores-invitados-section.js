@@ -1,32 +1,30 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import Button from '../button/button';
 import CardsContainer from '../cards/cards-container';
 import Card from '../cards/card';
 
-const tatuadoresInvitados = [
+export const tatuadoresInvitados = [
   {
     name: 'Tatuador 1',
     desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-    url: '#',
-    image: 'https://picsum.photos/300/250',
+    slug: 'tatuador-1',
+    image: 'https://picsum.photos/300/400',
   },
   {
     name: 'Tatuador 2',
     desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-    url: '#',
+    slug: 'tatuador-2',
     image: 'https://picsum.photos/300/400',
   },
   {
     name: 'Tatuador 3',
     desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-    url: '#',
+    slug: 'tatuaor-3',
     image: 'https://picsum.photos/300/400',
   },
   // {
   //   name: 'Tatuador 4',
   //   desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-  //   url: '#',
+  //   slug: 'tatuaor-4',
   //   image: 'https://picsum.photos/300/400',
   // },
 ];
@@ -63,7 +61,7 @@ export default function TatuadoresInvitadosSection() {
             title={tatuador.name}
             desc={tatuador.desc}
             image={tatuador.image}
-            url={tatuador.url}
+            url={`/tatuadores/${tatuador.slug}`}
           />
         ))}
       </CardsContainer>
