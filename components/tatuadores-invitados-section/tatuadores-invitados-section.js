@@ -1,33 +1,5 @@
 import Image from 'next/image';
-import CardsContainer from '../cards/cards-container';
-import Card from '../cards/card';
-
-export const tatuadoresInvitados = [
-  {
-    name: 'Tatuador 1',
-    desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-    slug: 'tatuador-1',
-    image: 'https://picsum.photos/300/400',
-  },
-  {
-    name: 'Tatuador 2',
-    desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-    slug: 'tatuador-2',
-    image: 'https://picsum.photos/300/400',
-  },
-  {
-    name: 'Tatuador 3',
-    desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-    slug: 'tatuaor-3',
-    image: 'https://picsum.photos/300/400',
-  },
-  // {
-  //   name: 'Tatuador 4',
-  //   desc: 'Tatuador de renombre invitado este mes especializado en tatuajes de estilo japonés y realismo. No te pierdas la oportunidad de tatuarte con él.',
-  //   slug: 'tatuaor-4',
-  //   image: 'https://picsum.photos/300/400',
-  // },
-];
+import TatuadoresInvitadosGrid from './tatuadores-invitados-grid';
 
 export default function TatuadoresInvitadosSection() {
   return (
@@ -54,17 +26,7 @@ export default function TatuadoresInvitadosSection() {
           </p>
         </div>
       </div>
-      <CardsContainer>
-        {tatuadoresInvitados.map((tatuador, index) => (
-          <Card
-            key={index}
-            title={tatuador.name}
-            desc={tatuador.desc}
-            image={tatuador.image}
-            url={`/tatuadores/${tatuador.slug}`}
-          />
-        ))}
-      </CardsContainer>
+      <TatuadoresInvitadosGrid />
     </section>
   );
 }

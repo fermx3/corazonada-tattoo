@@ -1,4 +1,4 @@
-import Card from '../cards/card';
+import CardContent from '../cards/card-content';
 import CardsContainer from '../cards/cards-container';
 
 const blogPosts = [
@@ -23,7 +23,7 @@ export default function BlogSection() {
       <div className='max-w-screen-lg m-auto'>
         <CardsContainer>
           {blogPosts.map((post, index) => (
-            <Card
+            <CardContent
               key={index}
               title={post.title}
               desc={post.content}

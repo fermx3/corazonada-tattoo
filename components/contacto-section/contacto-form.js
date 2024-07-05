@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactoSchema } from '../../lib/schemas';
-import { onSubmitContactForm } from '@/app/contact-form-submit';
+import { onSubmitContactForm } from '@/lib/actions';
 import { useState } from 'react';
 
 export default function ContactoForm() {
