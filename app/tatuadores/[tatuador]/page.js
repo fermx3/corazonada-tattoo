@@ -27,7 +27,7 @@ export default async function ArtistPage({ params }) {
           className='object-cover'
         />
       </div>
-      <div className='-mt-40 relative max-w-screen-xl grid grid-cols-responsive justify-items-center gap-8 p-5 m-auto'>
+      <div className='-mt-40 relative max-w-screen-xl grid grid-cols-responsive justify-items-center gap-8 p-5 lg:mx-auto mx-0'>
         <div className='w-80'>
           <Card>
             <div className='relative w-80 h-52'>
@@ -52,7 +52,7 @@ export default async function ArtistPage({ params }) {
             </Button>
           </div>
         </div>
-        <div className='lg:mt-48 mt-0 col-span-2'>
+        <div className='lg:mt-48 mt-0 lg:col-span-2 col-span-1'>
           <div className='p-5'>
             <div className='flex flex-wrap gap-5 justify-center'>
               <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
