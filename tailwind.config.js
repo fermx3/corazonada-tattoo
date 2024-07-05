@@ -10,6 +10,7 @@ module.exports = {
       spacing: {
         '90vh': '90vh',
         'fill-navbar': 'calc(100dvh - 5rem)',
+        fill: '-webkit-fill-available',
       },
       colors: {
         'soft-pink': '#fbdfe9',

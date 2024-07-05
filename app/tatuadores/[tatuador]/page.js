@@ -1,22 +1,19 @@
 import Button from '@/components/button/button';
 import Card from '@/components/cards/card';
-import { getTatuadoresInvitados } from '@/lib/actions';
+import { getTatuador, getTatuadoresInvitados } from '@/lib/actions';
 import Image from 'next/image';
-
-const tatuadoresInvitados = await getTatuadoresInvitados();
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
+  const tatuadoresInvitados = await getTatuadoresInvitados();
   return tatuadoresInvitados.map((tatuador) => ({
     tatuador: tatuador.slug,
   }));
 }
 
-export default function ArtistPage({ params }) {
-  const tatuadorData =
-    tatuadoresInvitados.find((tatuador) => tatuador.slug === params.tatuador) ||
-    {};
+export default async function ArtistPage({ params }) {
+  const tatuadorData = await getTatuador(params.tatuador);
 
   const { name, desc, image } = tatuadorData;
 
