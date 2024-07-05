@@ -1,4 +1,5 @@
 import BigCard from '../cards/big-card';
+import ContactoForm from './contacto-form';
 
 export default function ContactoSection() {
   return (
@@ -12,21 +13,7 @@ export default function ContactoSection() {
           ¿Tienes alguna pregunta o comentario? ¡Escríbenos! Estamos aquí para
           ayudarte.
         </p>
-        <form>
-          <input type='text' placeholder='Nombre' className='w-full p-2 my-2' />
-          <input type='email' placeholder='Email' className='w-full p-2 my-2' />
-          <textarea
-            name='message'
-            id='message'
-            cols='30'
-            rows='10'
-            placeholder='Mensaje'
-            className='w-full p-2 my-2'
-          ></textarea>
-          <button className='w-full bg-pink-accent text-white p-2 my-2'>
-            Enviar
-          </button>
-        </form>
+        <ContactoForm />
       </BigCard>
     </section>
   );
