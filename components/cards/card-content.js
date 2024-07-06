@@ -5,17 +5,17 @@ import Card from './card';
 export default function CardContent({ image, title, desc, url }) {
   return (
     <Card>
-      <div className='w-full h-64 relative mb-3'>
+      <div className='w-full h-56 relative mb-3'>
         <Image
           src={image}
           alt={`foto de ${title}`}
           fill
-          className='object-cover rounded-t-3xl'
+          className='object-cover rounded-3xl p-2'
         />
       </div>
-      <div className='p-10 pb-7 flex flex-col justify-between gap-5'>
-        <h3 className='font-bold text-2xl'>{title}</h3>
-        <p className='mb-10'>{desc}</p>
+      <div className='px-7 pb-5 flex flex-col flex-none gap-5'>
+        <p className='font-bold text-2xl p-0'>{title}</p>
+        <p>{desc}</p>
         <Button href={url}>Ver más</Button>
       </div>
     </Card>

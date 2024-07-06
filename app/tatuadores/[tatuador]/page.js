@@ -35,11 +35,11 @@ export default async function ArtistPage({ params }) {
                 src={image}
                 alt={name}
                 fill
-                className='object-cover rounded-t-3xl'
+                className='object-cover rounded-3xl p-2'
               />
             </div>
             <div className='w-80 p-5'>
-              <h1 className='text-3xl mb-3'>{name}</h1>
+              <h1 className='text-3xl'>{name}</h1>
               <p>{desc}</p>
             </div>
           </Card>
@@ -48,19 +48,19 @@ export default async function ArtistPage({ params }) {
               Agenda tu cita
             </Button>
             <Button href='/tatuadores' className='mt-5' buttonType='secondary'>
-              Ver otros tatuadores
+              Otros tatuadores
             </Button>
           </div>
         </div>
         <div className='lg:mt-48 mt-0 lg:col-span-2 col-span-1'>
           <div className='p-5'>
             <div className='flex flex-wrap gap-5 justify-center'>
-              <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
-              <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
-              <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
-              <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
-              <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
-              <div className='h-52 w-52 bg-gray-300 rounded-3xl'></div>
+              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
+              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
+              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
+              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
+              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
+              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
             </div>
           </div>
         </div>

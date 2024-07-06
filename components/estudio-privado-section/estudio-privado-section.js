@@ -5,12 +5,14 @@ export default function EstudioPrivadoSection() {
     <section className='min-h-dvh bg-estudio-privado bg-no-repeat bg-cover flex items-center justify-center'>
       <BigCard>
         <h2 className='text-6xl mb-3 text-pink-accent'>
-          ¿Por qué elegir un estudio privado?
+          ¿Qué es un estudio privado?
         </h2>
         <p className='text-lg'>
-          En un estudio privado, la atención es personalizada. No hay
-          interrupciones, ni ruido, ni esperas. Te sentirás cómodo y seguro en
-          todo momento y podrás disfrutar de una experiencia única.
+          Es un estudio que se maneja mediante citas previamente acordadas, es
+          un ambiente privado con un espacio para que el cliente y el
+          profesional puedan construir el diseño que quieran plasmar, un espacio
+          seguro en el cual el cliente y el tatuador pueden dedicarle el tiempo
+          necesario a cada pieza.
         </p>
       </BigCard>
     </section>

@@ -8,7 +8,7 @@ export default function HeroSection() {
           Corazonada Tattoo
         </h2>
         <h1 className='text-5xl text-center w-full text-pink-accent mb-5 drop-shadow-white'>
-          The best tattoo studio in Playa
+          Estudio privado en Playa del Carmen
         </h1>
         <Button href='/#contacto'>Book now</Button>
       </div>
