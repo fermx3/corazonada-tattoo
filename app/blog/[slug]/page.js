@@ -1,12 +1,11 @@
+import PostLikes from '@/components/blog-post/post-likes';
 import Button from '@/components/button/button';
 import { addLikeToPost, getBlogPost } from '@/lib/actions';
-import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
 
 const handleLike = async (slug) => {
   'use server';
   await addLikeToPost(slug);
-  revalidatePath(`/blog/${slug}`);
 };
 
 export default async function BlogPostPage({ params }) {
@@ -29,17 +28,11 @@ export default async function BlogPostPage({ params }) {
           dangerouslySetInnerHTML={{ __html: post.content }}
         ></div>
         <div className='mt-20 flex flex-wrap justify-between'>
-          {/* <div className='flex gap-3 items-center'>
-            <Button handleClick={handleLike(post.slug)}>
-              <Image
-                src='/icons/heart.svg'
-                alt='heart'
-                width={20}
-                height={20}
-              />
-            </Button>
-            <p>{post.likes} likes</p>
-          </div> */}
+          <PostLikes
+            likes={post.likes}
+            slug={post.slug}
+            handleClick={handleLike}
+          />
           <Button href='/blog' buttonType='secondary'>
             Ver otros posts
           </Button>

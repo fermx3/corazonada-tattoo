@@ -8,14 +8,14 @@ const year = new Date().getFullYear();
 const socialMedia = [
   {
     name: 'Instagram',
-    link: 'https://www.instagram.com/corazonadatattoo/',
+    link: 'https://www.instagram.com/corazonada.tattoo.estudio/',
     icon: '/icons/instagram.svg',
   },
-  {
-    name: 'Facebook',
-    link: 'https://www.facebook.com/corazonadatattoo',
-    icon: '/icons/facebook.svg',
-  },
+  // {
+  //   name: 'Facebook',
+  //   link: 'https://www.facebook.com/corazonadatattoo',
+  //   icon: '/icons/facebook.svg',
+  // },
 ];
 
 export default function Footer() {

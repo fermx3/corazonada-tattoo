@@ -20,7 +20,7 @@ export default function Button({
     return (
       <button
         className={customButtonStyles[buttonType] || customButtonStyles.primary}
-        onClick={() => handleClick}
+        onClick={handleClick}
       >
         {children}
       </button>
