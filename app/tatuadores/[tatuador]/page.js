@@ -1,12 +1,12 @@
 import Button from '@/components/button/button';
 import Card from '@/components/cards/card';
-import { getTatuador, getTatuadoresInvitados } from '@/lib/actions';
+import { getAllTatuadores, getTatuador } from '@/lib/actions';
 import Image from 'next/image';
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const tatuadoresInvitados = await getTatuadoresInvitados();
+  const tatuadoresInvitados = await getAllTatuadores();
   return tatuadoresInvitados.map((tatuador) => ({
     tatuador: tatuador.slug,
   }));
@@ -15,13 +15,13 @@ export async function generateStaticParams() {
 export default async function ArtistPage({ params }) {
   const tatuadorData = await getTatuador(params.tatuador);
 
-  const { name, desc, image } = tatuadorData;
+  const { name, desc, image, portada, slug, tatuajes } = tatuadorData;
 
   return (
     <div className='text-black min-h-dvh m-auto flex flex-col pb-20'>
       <div className='h-72 w-full relative'>
         <Image
-          src='https://picsum.photos/1200/800'
+          src={portada ? portada : 'https://picsum.photos/1200/800'}
           alt=''
           fill
           className='object-cover'
@@ -35,7 +35,7 @@ export default async function ArtistPage({ params }) {
                 src={image}
                 alt={name}
                 fill
-                className='object-cover rounded-3xl p-2'
+                className='object-cover object-top rounded-3xl p-2'
               />
             </div>
             <div className='w-80 p-5'>
@@ -55,12 +55,19 @@ export default async function ArtistPage({ params }) {
         <div className='lg:mt-48 mt-0 lg:col-span-2 col-span-1'>
           <div className='p-5'>
             <div className='flex flex-wrap gap-5 justify-center'>
-              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
-              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
-              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
-              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
-              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
-              <div className='h-80 w-80 bg-gray-300 rounded-3xl'></div>
+              {Array.from({ length: tatuajes }).map((_, i) => (
+                <div
+                  key={i}
+                  className='h-80 w-80 bg-gray-300 rounded-3xl relative shadow-md'
+                >
+                  <Image
+                    src={`/images/tatuadores/${slug}/${i}.jpg`}
+                    alt=''
+                    fill
+                    className='object-cover rounded-3xl'
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

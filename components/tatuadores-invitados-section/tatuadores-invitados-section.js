@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import TatuadoresInvitadosGrid from './tatuadores-invitados-grid';
+import Button from '../button/button';
 
 export default function TatuadoresInvitadosSection() {
   return (

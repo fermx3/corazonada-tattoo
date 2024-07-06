@@ -1,3 +1,4 @@
+import Button from '../button/button';
 import BlogGrid from './blog-grid';
 
 export default function BlogSection() {
@@ -6,6 +7,11 @@ export default function BlogSection() {
       <h2 className='text-center text-5xl text-white'>Blog</h2>
       <div className='max-w-screen-lg m-auto'>
         <BlogGrid />
+        {/* <div className='w-full flex justify-center'>
+          <Button href='/blog' buttonType='secondary'>
+            Ver más posts
+          </Button>
+        </div> */}
       </div>
     </section>
   );
