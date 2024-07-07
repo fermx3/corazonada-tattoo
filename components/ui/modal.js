@@ -6,11 +6,14 @@ export default function Modal({ children, handleClick }) {
   return (
     <div
       className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50'
-      onClick={() => handleClick()}
+      // onClick={() => handleClick()}
     >
-      <div className='relative p-5 rounded-lg glass'>
+      <div className='relative p-5 rounded-lg glass '>
         {children}
-        <div className='absolute top-2 right-2 z-50 cursor-pointer bg-white rounded-full'>
+        <div
+          className='absolute top-2 right-2 z-50 cursor-pointer bg-white rounded-full'
+          onClick={() => handleClick()}
+        >
           <Image
             src='/icons/close.svg'
             alt='Close'
