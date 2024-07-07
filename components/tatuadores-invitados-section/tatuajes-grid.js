@@ -55,8 +55,8 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                 <Image
                   src='/icons/arrow-left.svg'
                   alt='Anterior'
-                  width={30}
-                  height={30}
+                  width={40}
+                  height={40}
                 />
               </div>
             </div>
@@ -67,8 +67,8 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                 <Image
                   src='/icons/arrow-right.svg'
                   alt='Siguiente'
-                  width={30}
-                  height={30}
+                  width={40}
+                  height={40}
                 />
               </div>
             </div>

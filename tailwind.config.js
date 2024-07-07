@@ -29,7 +29,7 @@ module.exports = {
         contacto: 'url("https://picsum.photos/1200/800")',
       },
       gridTemplateColumns: {
-        responsive: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+        responsive: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))',
       },
       dropShadow: {
         white: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
