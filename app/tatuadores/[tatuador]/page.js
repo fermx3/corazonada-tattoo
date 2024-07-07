@@ -4,10 +4,33 @@ import TatuajesGrid from '@/components/tatuadores-invitados-section/tatuajes-gri
 import { getAllTatuadores, getTatuador } from '@/lib/actions';
 import Image from 'next/image';
 
+const tatuadoresInvitados = await getAllTatuadores();
+
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const tatuador = params.tatuador;
+  const tatuadorData = await getTatuador(tatuador);
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  console.log(await parent);
+
+  return {
+    title: `${(await parent).title?.absolute} | Tatuador ${tatuadorData.name}`,
+    description: tatuadorData.desc,
+    openGraph: {
+      images: [`/images/tatuadores/${tatuador}/perfil.jpg`, ...previousImages],
+    },
+    robots: `${
+      tatuadorData.privado ? 'noindex, nofollow' : (await parent).robots?.basic
+    }`,
+  };
+}
+
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const tatuadoresInvitados = await getAllTatuadores();
   return tatuadoresInvitados.map((tatuador) => ({
     tatuador: tatuador.slug,
   }));
