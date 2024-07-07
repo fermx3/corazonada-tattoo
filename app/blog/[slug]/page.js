@@ -3,6 +3,23 @@ import Button from '@/components/button/button';
 import { addLikeToPost, getBlogPost } from '@/lib/actions';
 import Image from 'next/image';
 
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const post = params.slug;
+  const postData = await getBlogPost(post);
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: `${(await parent).title?.absolute} | Blog | ${postData.title}`,
+    description: postData.excerpt,
+    openGraph: {
+      images: [`/images/blog/${post}.jpg`, ...previousImages],
+    },
+  };
+}
+
 const handleLike = async (slug) => {
   'use server';
   await addLikeToPost(slug);

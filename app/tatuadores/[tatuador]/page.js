@@ -14,8 +14,6 @@ export async function generateMetadata({ params }, parent) {
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
 
-  console.log(await parent);
-
   return {
     title: `${(await parent).title?.absolute} | Tatuador ${tatuadorData.name}`,
     description: tatuadorData.desc,
