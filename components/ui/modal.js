@@ -10,8 +10,14 @@ export default function Modal({ children, handleClick }) {
     >
       <div className='relative p-5 rounded-lg glass'>
         {children}
-        <div className='absolute top-5 right-5 z-40 cursor-pointer'>
-          <Image src='/icons/close.svg' alt='Close' width={30} height={30} />
+        <div className='absolute top-2 right-2 z-50 cursor-pointer bg-white rounded-full'>
+          <Image
+            src='/icons/close.svg'
+            alt='Close'
+            width={30}
+            height={30}
+            className='p-2'
+          />
         </div>
       </div>
     </div>

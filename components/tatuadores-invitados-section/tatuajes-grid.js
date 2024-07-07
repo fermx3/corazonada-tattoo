@@ -29,12 +29,12 @@ export default function TatuajesGrid({ tatuajes, slug }) {
       ))}
       {(modalOpenIndex === 0 || modalOpenIndex) && (
         <Modal handleClick={setModalOpenIndex}>
-          <div className='relative w-90vw h-90vh rounded-lg'>
+          <div className='relative w-90vh h-90vh rounded-lg'>
             <Image
               src={`/images/tatuadores/${slug}/${modalOpenIndex}.jpg`}
               alt=''
               fill
-              className='object-contain rounded-lg'
+              className='object-cover rounded-lg'
             />
           </div>
         </Modal>
