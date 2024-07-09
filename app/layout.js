@@ -20,6 +20,14 @@ const poppins = Poppins({
 export const metadata = {
   title: 'Corazonada Tattoo Studio',
   description: 'Tattoo studio in Playa del Carmen, México',
+  metadataBase: new URL('https://www.corazonadatattoo.com/'),
+  alternates: {
+    canonical: '/',
+    // languages: {
+    //   'en-US': '/en-US',
+    //   'de-DE': '/de-DE',
+    // },
+  },
   openGraph: {
     images: [`logo.png`],
   },
