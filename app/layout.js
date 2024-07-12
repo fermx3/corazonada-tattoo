@@ -34,6 +34,13 @@ export const metadata = {
   robots: 'index, follow',
 };
 
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fbdfe9' },
+    { media: '(prefers-color-scheme: dark)', color: '#18381d' },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang='es'>

@@ -5,16 +5,33 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Button from '../button/button';
 import HomeLinks from './home-links';
+import { useMotionValueEvent, useScroll, motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   const handleClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className='glass sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50 flex-wrap'>
+    <motion.nav
+      className='glass sticky top-0 left-0 rigth-0 flex items-center justify-between min-h-20 w-screen px-10 py-5 bg-soft-pink text-black z-50 flex-wrap'
+      variants={{ visible: { y: 0 }, hidden: { y: '-100%' } }}
+      animate={hidden && !isMenuOpen ? 'hidden' : 'visible'}
+    >
       <div className='logo'>
         <Link href='/'>
           <Image src='/logo.png' width={77} height={77} alt='' />
@@ -58,7 +75,7 @@ const Navbar = () => {
           </Button>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 
