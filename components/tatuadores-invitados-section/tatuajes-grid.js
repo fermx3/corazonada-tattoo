@@ -99,7 +99,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                   exitRight: { x: '100%', opacity: 0, scale: 0.5 },
                   exitLeft: { x: '-200%', opacity: 0 },
                 }}
-                transition={{ duration: 1, ease: 'easeIn' }}
+                transition={{ duration: 0.2, ease: 'easeIn' }}
                 initial={swipe === 'left' ? 'initialLeft' : 'initialRight'}
                 animate='visible'
                 exit={swipe === 'left' ? 'exitLeft' : 'exitRight'}
