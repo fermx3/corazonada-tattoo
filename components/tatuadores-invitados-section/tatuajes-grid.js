@@ -2,13 +2,14 @@
 
 import Image from 'next/image';
 import Modal from '../ui/modal';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { set } from 'zod';
 
 export default function TatuajesGrid({ tatuajes, slug }) {
   const [modalOpenIndex, setModalOpenIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -19,6 +20,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   const minSwipeDistance = 50;
 
   const onTouchStart = (e) => {
+    // setSwipe(null);
     setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
     setTouchStart(e.targetTouches[0].clientX);
   };
@@ -36,6 +38,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   console.log(modalOpenIndex);
 
   const handleClick = (index) => {
+    setIsModalOpen(true);
     setModalOpenIndex(index);
   };
 
@@ -76,67 +79,73 @@ export default function TatuajesGrid({ tatuajes, slug }) {
           />
         </div>
       ))}
-      <AnimatePresence>
-        {(modalOpenIndex === 0 || modalOpenIndex) && (
-          <Modal handleClick={setModalOpenIndex} key={modalOpenIndex}>
-            <motion.div
-              variants={{
-                hidden: {
-                  x: swipe === 'rigth' ? '100%' : '-100%',
-                  opacity: 0,
-                  scale: 0.5,
-                },
-                visible: { x: 0, opacity: 1, scale: 1 },
-                exit: {
-                  x: swipe === 'rigth' ? '-100%' : '100%',
-                  opacity: 0,
-                  scale: 0.5,
-                },
-              }}
-              transition={{ duration: 0.2 }}
-              initial='hidden'
-              animate='visible'
-              exit='exit'
-            >
-              <div className='relative md:w-90vh md:h-90vh h-90vw w-90vw rounded-lg'>
+
+      {isModalOpen && (
+        <Modal handleClick={setIsModalOpen}>
+          <AnimatePresence>
+            {(modalOpenIndex === 0 || modalOpenIndex) && (
+              <motion.div
+                variants={{
+                  initialRight: {
+                    x: '-100%',
+                    opacity: 0,
+                    scale: 0.5,
+                  },
+                  initialLeft: {
+                    x: '100%',
+                    opacity: 0,
+                    scale: 0.5,
+                  },
+                  visible: { x: 0, opacity: 1, scale: 1 },
+                  exitRight: { x: '100%', opacity: 0, scale: 0.5 },
+                  exitLeft: { x: '-100%', opacity: 0, scale: 0.5 },
+                }}
+                transition={{ duration: 1 }}
+                initial={swipe === 'left' ? 'initialLeft' : 'initialRight'}
+                animate='visible'
+                exit={swipe === 'left' ? 'exitLeft' : 'exitRight'}
+                key={modalOpenIndex}
+              >
+                <div className='relative md:w-90vh md:h-90vh h-90vw w-90vw rounded-lg'>
+                  <Image
+                    src={`/images/tatuadores/${slug}/${modalOpenIndex}.jpg`}
+                    alt=''
+                    fill
+                    className='object-cover rounded-lg'
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                  />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {modalOpenIndex > 0 && (
+            <div className='absolute top-1/2 left-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer'>
+              <div onClick={handlePrev}>
                 <Image
-                  src={`/images/tatuadores/${slug}/${modalOpenIndex}.jpg`}
-                  alt=''
-                  fill
-                  className='object-cover rounded-lg'
-                  onTouchStart={onTouchStart}
-                  onTouchMove={onTouchMove}
-                  onTouchEnd={onTouchEnd}
+                  src='/icons/arrow-left.svg'
+                  alt='Anterior'
+                  width={40}
+                  height={40}
                 />
               </div>
-            </motion.div>
-            {modalOpenIndex > 0 && (
-              <div className='absolute top-1/2 left-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer'>
-                <div onClick={handlePrev}>
-                  <Image
-                    src='/icons/arrow-left.svg'
-                    alt='Anterior'
-                    width={40}
-                    height={40}
-                  />
-                </div>
+            </div>
+          )}
+          {modalOpenIndex < tatuajes - 1 && (
+            <div className=' absolute top-1/2 right-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer'>
+              <div onClick={handleNext}>
+                <Image
+                  src='/icons/arrow-right.svg'
+                  alt='Siguiente'
+                  width={40}
+                  height={40}
+                />
               </div>
-            )}
-            {modalOpenIndex < tatuajes - 1 && (
-              <div className=' absolute top-1/2 right-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer'>
-                <div onClick={handleNext}>
-                  <Image
-                    src='/icons/arrow-right.svg'
-                    alt='Siguiente'
-                    width={40}
-                    height={40}
-                  />
-                </div>
-              </div>
-            )}
-          </Modal>
-        )}
-      </AnimatePresence>
+            </div>
+          )}
+        </Modal>
+      )}
     </div>
   );
 }
