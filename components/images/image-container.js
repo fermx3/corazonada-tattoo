@@ -3,13 +3,13 @@
 import { motion } from 'framer-motion';
 import { growVariants } from '../tatuadores-invitados-section/tatuajes-grid';
 
-export default function BigCard({ children }) {
+export default function ImageContainer({ children }) {
   return (
     <motion.div
-      className='glass max-w-2xl bg-soft-pink md:p-20 rounded-3xl shadow-xl lg:mx-0 mx-3 p-10'
+      className='max-w-lg rounded-3xl shadow-xl'
       variants={growVariants}
-      initial={'initial'}
-      whileInView={'visible'}
+      initial='initial'
+      whileInView='visible'
       viewport={{ once: true }}
     >
       {children}

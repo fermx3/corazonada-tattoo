@@ -6,6 +6,21 @@ import { useState } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+export const growVariants = {
+  initial: { opacity: 0, scale: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      ease: 'easeIn',
+      duration: 0.1,
+      type: 'spring',
+      mass: 0.5,
+    },
+  },
+};
+
 export default function TatuajesGrid({ tatuajes, slug }) {
   const [modalOpenIndex, setModalOpenIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,22 +74,21 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   };
 
   return (
-    <div className='flex flex-wrap gap-5 justify-center'>
+    <motion.div
+      className='flex flex-wrap gap-5 justify-center'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delayChildren: 0.5, staggerChildren: 0.1 }}
+    >
       {Array.from({ length: tatuajes }).map((_, i) => (
         <motion.div
           key={i}
           className='h-80 w-80 bg-gray-300 rounded-3xl relative shadow-md hover:shadow-xl cursor-pointer'
           onClick={() => handleClick(i)}
           whileTap={{ scale: 0.95 }}
-          initial={{ opacity: 0, scale: 0, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{
-            ease: 'easeIn',
-            duration: 0.1,
-            delay: i * 0.01,
-            type: 'spring',
-            mass: 0.5,
-          }}
+          initial={'initial'}
+          whileInView={'visible'}
+          variants={growVariants}
           viewport={{ once: true }}
         >
           <Image
@@ -168,6 +182,6 @@ export default function TatuajesGrid({ tatuajes, slug }) {
           )}
         </Modal>
       )}
-    </div>
+    </motion.div>
   );
 }
