@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,6 +9,8 @@ import {
   useScroll,
   motion,
   AnimatePresence,
+  animate,
+  stagger,
 } from 'framer-motion';
 
 import Button from '../button/button';
@@ -79,27 +81,25 @@ const Navbar = () => {
       )}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            className='h-fill-navbar w-full py-20 flex flex-col text-center justify-center'
-            initial={{ opacity: 0, y: -100, scale: 0.5 }}
+          <motion.ul
+            className='mb-20 text-3xl flex flex-col gap-10 h-fill-navbar w-full text-center justify-center align-center'
+            initial={{ opacity: 0, y: -100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -100, scale: 0.5 }}
+            exit={{ opacity: 0, y: -100, scale: 0.8 }}
             transition={{
-              duration: 0.2,
-              ease: 'easeInOut',
-              // staggerChildren: 0.1,
+              ease: 'easeOut',
               // stiffness: 100,
-              mass: 0.5,
+              // mass: 0.5,
+              bounce: 0,
+              duration: 0.2,
               type: 'spring',
             }}
           >
-            <ul className='mb-20 text-3xl flex flex-col gap-10'>
-              <HomeLinks onClick={handleClick} />
-            </ul>
+            <HomeLinks onClick={handleClick} />
             <Button href='/#contacto' onClick={handleClick}>
               Contacto
             </Button>
-          </motion.div>
+          </motion.ul>
         )}
       </AnimatePresence>
     </motion.nav>
