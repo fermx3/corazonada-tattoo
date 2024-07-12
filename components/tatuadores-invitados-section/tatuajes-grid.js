@@ -5,7 +5,6 @@ import Modal from '../ui/modal';
 import { useState } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { set } from 'zod';
 
 export default function TatuajesGrid({ tatuajes, slug }) {
   const [modalOpenIndex, setModalOpenIndex] = useState(null);
@@ -98,13 +97,14 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                   },
                   visible: { x: 0, opacity: 1, scale: 1 },
                   exitRight: { x: '100%', opacity: 0, scale: 0.5 },
-                  exitLeft: { x: '-100%', opacity: 0, scale: 0.5 },
+                  exitLeft: { x: '-200%', opacity: 0 },
                 }}
                 transition={{ duration: 0.2, ease: 'easeIn' }}
                 initial={swipe === 'left' ? 'initialLeft' : 'initialRight'}
                 animate='visible'
                 exit={swipe === 'left' ? 'exitLeft' : 'exitRight'}
                 key={modalOpenIndex}
+                className='flex overflow-hidden'
               >
                 <div className='relative md:w-90vh md:h-90vh h-90vw w-90vw rounded-lg'>
                   <Image
