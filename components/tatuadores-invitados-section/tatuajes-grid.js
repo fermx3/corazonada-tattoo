@@ -34,7 +34,6 @@ export default function TatuajesGrid({ tatuajes, slug }) {
     if (isLeftSwipe || isRightSwipe)
       isLeftSwipe ? handleNext() : isRightSwipe && handlePrev();
   };
-  console.log(modalOpenIndex);
 
   const handleClick = (index) => {
     setIsModalOpen(true);

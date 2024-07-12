@@ -1,17 +1,29 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+
+import {
+  useMotionValueEvent,
+  useScroll,
+  motion,
+  AnimatePresence,
+} from 'framer-motion';
+
 import Button from '../button/button';
 import HomeLinks from './home-links';
-import { useMotionValueEvent, useScroll, motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
 
   const { scrollY } = useScroll();
+
+  // const menuVariants = {
+  //   open: { opacity: 1, x: 0 },
+  //   closed: { opacity: 0, x: '-100%' },
+  // };
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
@@ -32,7 +44,7 @@ const Navbar = () => {
       variants={{ visible: { y: 0 }, hidden: { y: '-100%' } }}
       animate={hidden && !isMenuOpen ? 'hidden' : 'visible'}
     >
-      <div className='logo'>
+      <div className='logo' onClick={isMenuOpen ? handleClick : null}>
         <Link href='/'>
           <Image src='/logo.png' width={77} height={77} alt='' />
         </Link>
@@ -65,16 +77,31 @@ const Navbar = () => {
           </svg>
         </div>
       )}
-      {isMenuOpen && (
-        <div className='h-fill-navbar w-full py-20 flex flex-col text-center justify-center'>
-          <ul className='mb-20 text-3xl flex flex-col gap-10'>
-            <HomeLinks onClick={handleClick} />
-          </ul>
-          <Button href='/#contacto' onClick={handleClick}>
-            Contacto
-          </Button>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className='h-fill-navbar w-full py-20 flex flex-col text-center justify-center'
+            initial={{ opacity: 0, y: -100, scale: 0.5 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -100, scale: 0.5 }}
+            transition={{
+              duration: 0.2,
+              ease: 'easeInOut',
+              // staggerChildren: 0.1,
+              // stiffness: 100,
+              mass: 0.5,
+              type: 'spring',
+            }}
+          >
+            <ul className='mb-20 text-3xl flex flex-col gap-10'>
+              <HomeLinks onClick={handleClick} />
+            </ul>
+            <Button href='/#contacto' onClick={handleClick}>
+              Contacto
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
