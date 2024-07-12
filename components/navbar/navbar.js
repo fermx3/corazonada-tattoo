@@ -81,8 +81,8 @@ const Navbar = () => {
       )}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.ul
-            className='mb-20 text-3xl flex flex-col gap-10 h-fill-navbar w-full text-center justify-center align-center'
+          <motion.div
+            className='sticky top-20 left-0 right-0 mb-20 text-3xl flex flex-col gap-10 h-fill-navbar w-full text-center justify-center align-center z-40'
             initial={{ opacity: 0, y: -100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -100, scale: 0.8 }}
@@ -94,12 +94,13 @@ const Navbar = () => {
               duration: 0.2,
               type: 'spring',
             }}
+            key={'menu'}
           >
             <HomeLinks onClick={handleClick} />
             <Button href='/#contacto' onClick={handleClick}>
               Contacto
             </Button>
-          </motion.ul>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
