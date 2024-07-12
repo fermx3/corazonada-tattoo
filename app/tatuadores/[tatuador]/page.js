@@ -48,6 +48,8 @@ export default async function ArtistPage({ params }) {
             alt=''
             fill
             className='object-cover'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            priority
           />
         </div>
         <div className='-mt-40 relative max-w-screen-xl grid grid-cols-responsive justify-items-center gap-8 p-5 lg:mx-auto mx-0'>
@@ -59,6 +61,7 @@ export default async function ArtistPage({ params }) {
                   alt={name}
                   fill
                   className='object-cover object-top rounded-3xl p-2'
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
               </div>
               <div className='w-80 p-5'>

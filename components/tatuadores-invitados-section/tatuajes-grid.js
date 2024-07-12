@@ -58,6 +58,9 @@ export default function TatuajesGrid({ tatuajes, slug }) {
             alt=''
             fill
             className='object-cover rounded-3xl hover:opacity-80 transition-opacity duration-300'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            placeholder='blur'
+            blurDataURL={`/images/tatuadores/${slug}/${i}.jpg`}
           />
         </div>
       ))}

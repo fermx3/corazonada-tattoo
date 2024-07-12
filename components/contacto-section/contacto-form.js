@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { contactoSchema } from '../../lib/schemas';
 import { onSubmitContactForm } from '@/lib/actions';
 import { useState } from 'react';
+import Loader from '../ui/loader';
 
 export default function ContactoForm() {
   const [message, setMessage] = useState('');
@@ -72,14 +73,13 @@ export default function ContactoForm() {
       )}
       <button
         type='submit'
-        className={`w-full bg-pink-accent text-white p-2 my-2 ${
-          isSubmitting
-            ? 'cursor-not-allowed bg-slate-700 flex justify-center'
-            : ''
+        className={`w-full bg-pink-accent text-white p-2 my-2 flex items-center justify-center ${
+          isSubmitting ? 'cursor-not-allowed bg-slate-700' : ''
         }`}
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Enviando' : 'Enviar'}
+        {isSubmitting && <Loader />}
+        <span className='ml-2'>{isSubmitting ? 'Enviando' : 'Enviar'}</span>
       </button>
       {message && <p>{message}</p>}
     </form>

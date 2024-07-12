@@ -1,0 +1,28 @@
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  /* color: white; */
+  background-image: url('/isotipo-blanco.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.4;
+  animation: l3 1s infinite;
+}
+@keyframes l3 {
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.large {
+  width: 100px;
+  background-image: url('/logo.png');
+}
