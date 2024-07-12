@@ -42,7 +42,7 @@ export default function Footer() {
             <li className='uppercase'>
               <Link href='/'>Home</Link>
             </li>
-            <HomeLinks />
+            <HomeLinks justLinks />
           </ul>
         </div>
         <div>

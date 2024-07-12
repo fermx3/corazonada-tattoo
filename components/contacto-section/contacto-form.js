@@ -6,6 +6,7 @@ import { contactoSchema } from '../../lib/schemas';
 import { onSubmitContactForm } from '@/lib/actions';
 import { useState } from 'react';
 import Loader from '../ui/loader';
+import Button from '../button/button';
 
 export default function ContactoForm() {
   const [message, setMessage] = useState('');
@@ -71,16 +72,16 @@ export default function ContactoForm() {
       {errors.mensaje && (
         <p className='text-red-500'>{errors.mensaje?.message}</p>
       )}
-      <button
-        type='submit'
-        className={`w-full bg-pink-accent text-white p-2 my-2 flex items-center justify-center ${
+      <div
+        className={`w-full text-white my-2 ${
           isSubmitting ? 'cursor-not-allowed bg-slate-700' : ''
         }`}
-        disabled={isSubmitting}
       >
-        {isSubmitting && <Loader />}
-        <span className='ml-2'>{isSubmitting ? 'Enviando' : 'Enviar'}</span>
-      </button>
+        <Button type='submit' disabled={isSubmitting}>
+          {isSubmitting && <Loader />}
+          <span className='ml-2'>{isSubmitting ? 'Enviando' : 'Enviar'}</span>
+        </Button>
+      </div>
       {message && <p>{message}</p>}
     </form>
   );

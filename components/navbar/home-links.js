@@ -11,9 +11,9 @@ const links = [
 ];
 
 const ulVariants = {
-  hidden: { opacity: '0' },
+  hidden: { opacity: 0 },
   visible: {
-    opacity: '1',
+    opacity: 1,
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
   exit: {
@@ -23,7 +23,7 @@ const ulVariants = {
 };
 
 const liVariants = {
-  hidden: { y: '-100vw', listStyleImage: 'unset' },
+  hidden: { y: '-100vw' },
   visible: {
     y: '0',
     transition: { type: 'spring', mass: 0.4, damping: 8 },
@@ -39,7 +39,21 @@ const liVariants = {
   },
 };
 
-export default function HomeLinks({ onClick }) {
+export default function HomeLinks({ onClick, justLinks }) {
+  if (justLinks) {
+    return (
+      <>
+        {links.map((link) => (
+          <li key={link.name} className='uppercase'>
+            <Link href={link.href} onClick={onClick && onClick}>
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </>
+    );
+  }
+
   return (
     <AnimatePresence>
       <motion.ul
@@ -52,7 +66,10 @@ export default function HomeLinks({ onClick }) {
         {links.map((link) => (
           <motion.li
             key={link.name}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{
+              scale: 1.05,
+              transition: { type: 'spring', mass: 0.4, damping: 8 },
+            }}
             whileTap={{ scale: 0.9 }}
             variants={liVariants}
           >
