@@ -10,6 +10,7 @@ module.exports = {
       spacing: {
         '90vh': '90vh',
         '90vw': '90vw',
+        '100vw': '100vw',
         'fill-navbar': 'calc(100dvh - 5rem)',
         fill: '-webkit-fill-available',
       },

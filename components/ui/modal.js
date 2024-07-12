@@ -8,7 +8,7 @@ export default function Modal({ children, handleClick }) {
       className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50'
       // onClick={() => handleClick()}
     >
-      <div className='relative p-5 rounded-lg glass flex w-screen'>
+      <div className='p-5 rounded-lg glass flex w-screen h-100vw'>
         {children}
         <div
           className='absolute top-2 right-2 z-50 cursor-pointer bg-white rounded-full'

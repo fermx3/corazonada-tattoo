@@ -95,16 +95,16 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                     opacity: 0,
                     scale: 0.5,
                   },
-                  visible: { x: 0, opacity: 1, scale: 1 },
+                  visible: { x: 0, opacity: 1, scale: 1, originX: 0 },
                   exitRight: { x: '100%', opacity: 0, scale: 0.5 },
                   exitLeft: { x: '-200%', opacity: 0 },
                 }}
-                transition={{ duration: 0.2, ease: 'easeIn' }}
+                transition={{ duration: 1, ease: 'easeIn' }}
                 initial={swipe === 'left' ? 'initialLeft' : 'initialRight'}
                 animate='visible'
                 exit={swipe === 'left' ? 'exitLeft' : 'exitRight'}
                 key={modalOpenIndex}
-                className='flex overflow-hidden'
+                className='flex absolute'
               >
                 <div className='relative md:w-90vh md:h-90vh h-90vw w-90vw rounded-lg'>
                   <Image
