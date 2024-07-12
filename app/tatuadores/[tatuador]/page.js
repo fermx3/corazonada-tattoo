@@ -1,5 +1,5 @@
 import Button from '@/components/button/button';
-import Card from '@/components/cards/card';
+import TatuadorCard from '@/components/tatuadores-invitados-section/tatuador-card';
 import TatuajesGrid from '@/components/tatuadores-invitados-section/tatuajes-grid';
 import { getAllTatuadores, getTatuador } from '@/lib/actions';
 import Image from 'next/image';
@@ -54,21 +54,7 @@ export default async function ArtistPage({ params }) {
         </div>
         <div className='-mt-40 relative max-w-screen-xl grid grid-cols-responsive justify-items-center gap-8 p-5 lg:mx-auto mx-0'>
           <div className='w-80'>
-            <Card>
-              <div className='relative w-80 h-52'>
-                <Image
-                  src={image}
-                  alt={name}
-                  fill
-                  className='object-cover object-top rounded-3xl p-2'
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                />
-              </div>
-              <div className='w-80 p-5'>
-                <h1 className='text-3xl'>{name}</h1>
-                <p>{desc}</p>
-              </div>
-            </Card>
+            <TatuadorCard image={image} name={name} desc={desc} />
             <div className='mt-10 flex flex-wrap justify-center'>
               <Button href='/#contacto' className='mt-5'>
                 Agenda tu cita

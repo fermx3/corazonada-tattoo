@@ -36,7 +36,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   };
 
   const handleClick = (index) => {
-    setIsModalOpen(true);
+    setIsModalOpen(!isModalOpen);
     setModalOpenIndex(index);
   };
 
@@ -61,10 +61,21 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   return (
     <div className='flex flex-wrap gap-5 justify-center'>
       {Array.from({ length: tatuajes }).map((_, i) => (
-        <div
+        <motion.div
           key={i}
           className='h-80 w-80 bg-gray-300 rounded-3xl relative shadow-md hover:shadow-xl cursor-pointer'
           onClick={() => handleClick(i)}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            ease: 'easeIn',
+            duration: 0.1,
+            delay: i * 0.01,
+            type: 'spring',
+            mass: 0.5,
+          }}
+          viewport={{ once: true }}
         >
           <Image
             src={`/images/tatuadores/${slug}/${i}.jpg`}
@@ -75,7 +86,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
             placeholder='blur'
             blurDataURL={`/images/tatuadores/${slug}/${i}.jpg`}
           />
-        </div>
+        </motion.div>
       ))}
 
       {isModalOpen && (
@@ -103,7 +114,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                 animate='visible'
                 exit={swipe === 'left' ? 'exitLeft' : 'exitRight'}
                 key={modalOpenIndex}
-                className='flex absolute'
+                className='flex absolute md:justify-center md:items-center w-fill h-fill'
               >
                 <div className='relative md:w-90vh md:h-90vh h-90vw w-90vw rounded-lg'>
                   <Image
@@ -115,6 +126,18 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                     onTouchMove={onTouchMove}
                     onTouchEnd={onTouchEnd}
                   />
+                  <div
+                    className='absolute -top-3 -right-3 z-50 cursor-pointer bg-white rounded-full'
+                    onClick={handleClick}
+                  >
+                    <Image
+                      src='/icons/close.svg'
+                      alt='Close'
+                      width={30}
+                      height={30}
+                      className='p-2'
+                    />
+                  </div>
                 </div>
               </motion.div>
             )}
