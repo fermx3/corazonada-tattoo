@@ -4,6 +4,7 @@ import Card from '../cards/card';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
+import { frameVariants, slideDownVariants } from '@/lib/framer-variants';
 
 export default function TatuadorCard({ image, name, desc }) {
   return (
@@ -26,24 +27,14 @@ export default function TatuadorCard({ image, name, desc }) {
         </div>
         <motion.div
           className='w-80 p-5'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ staggerChildren: 2 }}
+          variants={frameVariants}
+          initial='hidden'
+          animate='visible'
         >
-          <motion.h1
-            className='text-3xl'
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <motion.h1 className='text-3xl' variants={slideDownVariants}>
             {name}
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-          >
-            {desc}
-          </motion.p>
+          <motion.p variants={slideDownVariants}>{desc}</motion.p>
         </motion.div>
       </Card>
     </motion.div>

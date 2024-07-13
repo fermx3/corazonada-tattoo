@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import TatuadoresInvitadosGrid from './tatuadores-invitados-grid';
 import ImageContainer from '../images/image-container';
+import TatuadoresInvitadosTexto from './tatuadores-invitados-texto';
 
 export default function TatuadoresInvitadosSection() {
   return (
@@ -18,17 +19,7 @@ export default function TatuadoresInvitadosSection() {
             className='rounded-3xl'
           />
         </ImageContainer>
-        <div className='max-w-lg text-black'>
-          <h3 className='text-2xl'>Tatuadores invitados</h3>
-          <h2 className='text-6xl mb-3 text-pink-accent'>
-            Tatuadores de todo el mundo
-          </h2>
-          <p>
-            Contamos con espacio para que diferentes artistas visiten nuestro
-            estudio. Puedes chequear los próximos invitados con anticipación y
-            acordar una cita previamente .
-          </p>
-        </div>
+        <TatuadoresInvitadosTexto />
       </div>
       <TatuadoresInvitadosGrid />
     </section>

@@ -1,6 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import Button from '../button/button';
 import Card from './card';
+
+import { motion } from 'framer-motion';
+import { frameVariants, slideDownVariants } from '@/lib/framer-variants';
 
 export default function CardContent({ image, title, desc, url }) {
   return (
@@ -13,11 +18,22 @@ export default function CardContent({ image, title, desc, url }) {
           className='object-cover rounded-3xl p-2'
         />
       </div>
-      <div className='px-7 pb-5 flex flex-col flex-none gap-5'>
-        <p className='font-bold text-2xl p-0'>{title}</p>
-        <p>{desc}</p>
+      <motion.div
+        className='px-7 pb-5 flex flex-col flex-none gap-5'
+        variants={frameVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true }}
+      >
+        <motion.p
+          className='font-bold text-2xl p-0'
+          variants={slideDownVariants}
+        >
+          {title}
+        </motion.p>
+        <motion.p variants={slideDownVariants}>{desc}</motion.p>
         <Button href={url}>Ver más</Button>
-      </div>
+      </motion.div>
     </Card>
   );
 }
