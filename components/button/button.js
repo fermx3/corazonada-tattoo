@@ -10,12 +10,15 @@ export default function Button({
   onClick,
   buttonType,
   handleClick,
+  disabled,
 }) {
   const customButtonStyles = {
     primary:
       'text-white bg-pink-accent hover:bg-pink-primary focus:ring-4 focus:ring-pink-accent font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none z-10 lg:max-w-max uppercase flex items-center justify-center w-fill',
     secondary:
       'text-pink-accent bg-white border border-pink-accent hover:bg-pink-accent hover:text-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none z-10 lg:max-w-max uppercase flex items-center justify-center w-fill',
+    disabled:
+      'text-white bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none z-10 lg:max-w-max uppercase flex items-center justify-center w-fill pointer-events-none',
   };
 
   if (!href) {
@@ -24,6 +27,7 @@ export default function Button({
         className={customButtonStyles[buttonType] || customButtonStyles.primary}
         onClick={handleClick}
         whileTap={{ scale: 0.9 }}
+        disabled={disabled}
       >
         {children}
       </motion.button>

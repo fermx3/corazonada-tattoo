@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { AnimatePresence, motion, stagger } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const links = [
   { name: '¿Quiénes somos?', href: '/#quienes-somos' },

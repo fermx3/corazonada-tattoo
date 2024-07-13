@@ -22,11 +22,6 @@ const Navbar = () => {
 
   const { scrollY } = useScroll();
 
-  // const menuVariants = {
-  //   open: { opacity: 1, x: 0 },
-  //   closed: { opacity: 0, x: '-100%' },
-  // };
-
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
     if (latest > previous && latest > 150) {

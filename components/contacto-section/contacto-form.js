@@ -8,6 +8,9 @@ import { useState } from 'react';
 import Loader from '../ui/loader';
 import Button from '../button/button';
 
+import { motion } from 'framer-motion';
+import { frameVariants, slideDownVariants } from '@/lib/framer-variants';
+
 export default function ContactoForm() {
   const [message, setMessage] = useState('');
 
@@ -37,52 +40,66 @@ export default function ContactoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
+    <motion.form
+      onSubmit={handleSubmit(onSubmit)}
+      variants={frameVariants}
+      initial='hidden'
+      whileInView='visible'
+    >
+      <motion.input
         type='text'
         placeholder='Nombre'
-        className={`w-full p-2 my-2 ${
-          errors.nombre ? 'border-red-500 border-2 border-solid rounded' : ''
+        className={`w-full p-2 my-2 rounded-md ${
+          errors.nombre ? 'border-red-500 border-2 border-solid rounded-md' : ''
         }`}
         {...register('nombre')}
+        variants={slideDownVariants}
       />
       {errors.nombre && (
         <p className='text-red-500'>{errors.nombre?.message}</p>
       )}
-      <input
+      <motion.input
         type='email'
         placeholder='Email'
-        className={`w-full p-2 my-2 ${
-          errors.email ? 'border-red-500 border-2 border-solid rounded' : ''
+        className={`w-full p-2 my-2 rounded-md ${
+          errors.email ? 'border-red-500 border-2 border-solid rounded-md' : ''
         }`}
         {...register('email')}
+        variants={slideDownVariants}
       />
       {errors.email && <p className='text-red-500'>{errors.email?.message}</p>}
-      <textarea
+      <motion.textarea
         name='message'
         id='message'
         cols='30'
         rows='10'
         placeholder='Mensaje'
-        className={`w-full p-2 my-2 ${
-          errors.mensaje ? 'border-red-500 border-2 border-solid rounded' : ''
+        className={`w-full p-2 my-2 rounded-md ${
+          errors.mensaje
+            ? 'border-red-500 border-2 border-solid rounded-md'
+            : ''
         }`}
         {...register('mensaje')}
-      ></textarea>
+        variants={slideDownVariants}
+      ></motion.textarea>
       {errors.mensaje && (
         <p className='text-red-500'>{errors.mensaje?.message}</p>
       )}
-      <div
-        className={`w-full text-white my-2 ${
-          isSubmitting ? 'cursor-not-allowed bg-slate-700' : ''
-        }`}
-      >
-        <Button type='submit' disabled={isSubmitting}>
-          {isSubmitting && <Loader />}
-          <span className='ml-2'>{isSubmitting ? 'Enviando' : 'Enviar'}</span>
+      <div className={`w-full text-white my-2`}>
+        <Button
+          type='submit'
+          disabled={isSubmitting}
+          buttonType={isSubmitting ? 'disabled' : 'primary'}
+        >
+          {isSubmitting && (
+            <span className='mr-2'>
+              <Loader />
+            </span>
+          )}
+          {isSubmitting ? 'Enviando' : 'Enviar'}
         </Button>
       </div>
       {message && <p>{message}</p>}
-    </form>
+    </motion.form>
   );
 }
