@@ -1,17 +1,34 @@
+'use client';
+
 import Button from '../button/button';
+
+import { motion } from 'framer-motion';
+import { frameVariants, slideDownVariants } from '@/lib/framer-variants';
 
 export default function HeroSection() {
   return (
     <section className='flex lg:flex-col items-center justify-center relative overflow-hidden flex-col-reverse'>
-      <div className='flex flex-col items-center w-screen lg:absolute lg:text-white lg:p-0 py-20'>
-        <h2 className='text-3xl text-center w-full drop-shadow'>
+      <motion.div
+        className='flex flex-col items-center w-screen lg:absolute lg:text-white lg:p-0 py-20'
+        variants={frameVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true }}
+      >
+        <motion.h2
+          className='text-3xl text-center w-full drop-shadow'
+          variants={slideDownVariants}
+        >
           Corazonada Tattoo
-        </h2>
-        <h1 className='text-5xl text-center w-full text-pink-accent mb-5 drop-shadow-white'>
+        </motion.h2>
+        <motion.h1
+          className='text-5xl text-center w-full text-pink-accent mb-5 drop-shadow-white'
+          variants={slideDownVariants}
+        >
           Estudio privado en Playa del Carmen
-        </h1>
+        </motion.h1>
         <Button href='/#contacto'>Reserva ahora</Button>
-      </div>
+      </motion.div>
       <div className='shadow-xl max-h-dvh w-full'>
         <video
           playsInline

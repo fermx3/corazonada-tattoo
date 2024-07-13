@@ -4,16 +4,20 @@ import Card from '../cards/card';
 import Image from 'next/image';
 
 import { motion } from 'framer-motion';
-import { frameVariants, slideDownVariants } from '@/lib/framer-variants';
+import {
+  frameVariants,
+  slideDownVariants,
+  slideLeftVariants,
+} from '@/lib/framer-variants';
 
 export default function TatuadorCard({ image, name, desc }) {
   return (
     <motion.div
       className='w-80'
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      variants={slideLeftVariants}
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: true }}
-      transition={{ ease: 'easeOut', duration: 0.2 }}
     >
       <Card>
         <div className='relative w-80 h-52'>
@@ -23,6 +27,8 @@ export default function TatuadorCard({ image, name, desc }) {
             fill
             className='object-cover object-top rounded-3xl p-2'
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            placeholder='blur'
+            blurDataURL={image}
           />
         </div>
         <motion.div
