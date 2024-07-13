@@ -140,24 +140,12 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                     onTouchMove={onTouchMove}
                     onTouchEnd={onTouchEnd}
                   />
-                  <div
-                    className='absolute -top-3 -right-3 z-50 cursor-pointer bg-white rounded-full'
-                    onClick={handleClick}
-                  >
-                    <Image
-                      src='/icons/close.svg'
-                      alt='Close'
-                      width={30}
-                      height={30}
-                      className='p-2'
-                    />
-                  </div>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
           {modalOpenIndex > 0 && (
-            <div className='absolute top-1/2 left-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer'>
+            <div className='absolute top-1/2 left-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer md:block hidden'>
               <div onClick={handlePrev}>
                 <Image
                   src='/icons/arrow-left.svg'
@@ -169,7 +157,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
             </div>
           )}
           {modalOpenIndex < tatuajes - 1 && (
-            <div className=' absolute top-1/2 right-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer'>
+            <div className=' absolute top-1/2 right-2 bg-pink-accent w-fit h-fit rounded-full cursor-pointer md:block hidden'>
               <div onClick={handleNext}>
                 <Image
                   src='/icons/arrow-right.svg'

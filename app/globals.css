@@ -34,6 +34,11 @@ h6 {
   font-family: var(--font-kavoon);
 }
 
+.blog-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+}
+
 .glass {
   /* From https://css.glass */
   background: rgba(251, 223, 233, 0.77);
@@ -51,8 +56,10 @@ h6 {
 .post-content > h4,
 .post-content > h5,
 .post-content > h6 {
-  padding-top: 1.2rem;
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
+  font-family: var(--font-poppins);
+  font-weight: 800;
 }
 
 .post-content ul {

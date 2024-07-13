@@ -28,31 +28,39 @@ const handleLike = async (slug) => {
 export default async function BlogPostPage({ params }) {
   const post = await getBlogPost(params.slug);
   return (
-    <div className='text-black min-h-dvh m-auto flex flex-col pb-20 bg-green-primary'>
-      <div className='max-w-screen-lg mx-auto py-10 pt-16 px-5 text-white w-fill'>
-        <h1 className='text-5xl'>{post.title}</h1>
-        <p className='text-sm mb-16'>by {post.author}</p>
-        <div className='h-72 w-full relative flex items-center justify-center'>
-          <Image
-            src='https://picsum.photos/1200/800'
-            alt=''
-            fill
-            className='object-cover'
-          />
+    <div className='min-h-dvh m-auto flex flex-col pb-20 bg-white'>
+      <div className='md:mx-10 mx-2 py-10 md:pt-16 pt-10 px-5 w-fill'>
+        <div className='max-w-screen-lg mx-auto'>
+          <h1 className='text-5xl blog-title'>{post.title}</h1>
+          <p className='text-sm mb-16'>by {post.author}</p>
         </div>
-        <div
-          className='mt-10 w-fill post-content'
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        ></div>
-        <div className='mt-20 flex flex-wrap justify-between'>
-          <PostLikes
-            likes={post.likes}
-            slug={post.slug}
-            handleClick={handleLike}
-          />
-          <Button href='/blog' buttonType='secondary'>
-            Ver otros posts
-          </Button>
+        <div className='grid grid-cols-responsive-sm gap-10'>
+          <div className='col-span-4'>
+            <div className='h-96 w-full relative flex items-center justify-center rounded-3xl shadow-md'>
+              <Image
+                src='https://picsum.photos/1200/800'
+                alt=''
+                fill
+                className='object-cover rounded-3xl'
+              />
+            </div>
+            <div
+              className='mt-10 w-fill post-content'
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            ></div>
+          </div>
+          <div>
+            <div className='flex flex-wrap justify-between'>
+              <PostLikes
+                likes={post.likes}
+                slug={post.slug}
+                handleClick={handleLike}
+              />
+              <Button href='/blog' buttonType='secondary'>
+                Ver otros posts
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
