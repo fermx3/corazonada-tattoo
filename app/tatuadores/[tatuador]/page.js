@@ -41,7 +41,7 @@ export default async function ArtistPage({ params }) {
 
   return (
     <>
-      <div className='text-black min-h-dvh m-auto flex flex-col pb-20'>
+      <div className='text-black m-auto flex flex-col pb-20'>
         <div className='h-72 w-full relative'>
           <Image
             src={portada ? portada : 'https://picsum.photos/1200/800'}

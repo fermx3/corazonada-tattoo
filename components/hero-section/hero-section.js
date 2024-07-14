@@ -29,7 +29,7 @@ export default function HeroSection() {
         </motion.h1>
         <Button href='/#contacto'>Reserva ahora</Button>
       </motion.div>
-      <div className='shadow-xl max-h-dvh w-full'>
+      <div className='shadow-xl w-full'>
         <video
           playsInline
           autoPlay

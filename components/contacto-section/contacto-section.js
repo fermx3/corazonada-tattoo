@@ -10,7 +10,7 @@ export default function ContactoSection() {
   return (
     <section
       id='contacto'
-      className='min-h-dvh bg-contacto bg-no-repeat bg-cover flex items-center justify-center py-32'
+      className='bg-contacto bg-no-repeat bg-cover flex items-center justify-center py-32'
     >
       <BigCard>
         <motion.div
@@ -33,7 +33,7 @@ export default function ContactoSection() {
             ayudarte.
           </motion.p>
         </motion.div>
-        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'></hr>
+        <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700'></hr>
         <ContactoForm />
       </BigCard>
     </section>
