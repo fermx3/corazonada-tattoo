@@ -45,6 +45,7 @@ export default function ContactoForm() {
       variants={frameVariants}
       initial='hidden'
       whileInView='visible'
+      viewport={{ once: true }}
     >
       <motion.input
         type='text'
