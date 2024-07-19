@@ -9,25 +9,27 @@ export default function HeroSection() {
   return (
     <section className='flex lg:flex-col items-center justify-center relative overflow-hidden flex-col-reverse'>
       <motion.div
-        className='flex flex-col items-center w-screen lg:absolute text-white lg:p-0 py-20 lg:bg-none bg-fachada bg-center bg-fixed shadow-inner'
+        className='relative flex flex-col items-center w-screen lg:absolute text-white lg:p-0 lg:bg-none bg-fachada bg-center bg-fixed shadow-inner'
         variants={frameVariants}
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <motion.h2
-          className='text-3xl text-center w-full drop-shadow-2xl'
-          variants={slideDownVariants}
-        >
-          Corazonada Tattoo
-        </motion.h2>
-        <motion.h1
-          className='text-5xl text-center w-full text-pink-accent mb-5 drop-shadow-2xl'
-          variants={slideDownVariants}
-        >
-          Estudio privado en Playa del Carmen
-        </motion.h1>
-        <Button href='/#contacto'>Reserva ahora</Button>
+        <div className='bg-black/30 w-full h-full lg:h-dvh flex justify-center flex-col items-center py-20'>
+          <motion.h2
+            className='text-3xl text-center w-full drop-shadow-2xl'
+            variants={slideDownVariants}
+          >
+            Corazonada Tattoo
+          </motion.h2>
+          <motion.h1
+            className='text-5xl text-center w-full text-pink-accent mb-5 drop-shadow-2xl'
+            variants={slideDownVariants}
+          >
+            Estudio privado en Playa del Carmen
+          </motion.h1>
+          <Button href='/#contacto'>Reserva ahora</Button>
+        </div>
       </motion.div>
       <div className='shadow-xl w-full'>
         <video
@@ -35,7 +37,7 @@ export default function HeroSection() {
           autoPlay
           loop
           muted
-          className='h-full w-full object-cover'
+          className='lg:h-dvh h-full w-full object-cover'
         >
           <source src='/videos/main.mp4' type='video/mp4' />
         </video>
