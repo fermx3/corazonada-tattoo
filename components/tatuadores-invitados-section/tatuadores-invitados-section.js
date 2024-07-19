@@ -6,7 +6,7 @@ import TatuadoresInvitadosTexto from './tatuadores-invitados-texto';
 export default function TatuadoresInvitadosSection() {
   return (
     <section className='bg-soft-pink px-5 py-10' id='tatuadores-invitados'>
-      <div className='flex items-center justify-center flex-wrap gap-20 my-20'>
+      <div className='flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20 my-20'>
         <ImageContainer>
           <Image
             src='https://picsum.photos/300/400'

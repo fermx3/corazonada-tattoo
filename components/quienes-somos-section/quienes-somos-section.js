@@ -9,7 +9,7 @@ import { frameVariants, slideRightVariants } from '@/lib/framer-variants';
 export default function QuienesSomosSection() {
   return (
     <section
-      className='min-h-dvh bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap gap-20'
+      className='min-h-dvh bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20'
       id='quienes-somos'
     >
       <motion.div
@@ -20,7 +20,7 @@ export default function QuienesSomosSection() {
         viewport={{ once: true }}
       >
         <Image
-          src='https://picsum.photos/300/400'
+          src='/images/home/azul-1.jpg'
           alt='Logo'
           width={400}
           height={300}
