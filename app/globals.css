@@ -45,6 +45,12 @@ h6 {
   backdrop-filter: blur(7px);
 }
 
+.glass-strong {
+  /* From https://css.glass */
+  background: rgba(251, 223, 233, 0.87);
+  backdrop-filter: blur(10px);
+}
+
 .post-content {
   font-size: 1.25rem;
   line-height: 1.5;

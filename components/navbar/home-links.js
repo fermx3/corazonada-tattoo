@@ -45,9 +45,7 @@ export default function HomeLinks({ onClick, justLinks }) {
       <>
         {links.map((link) => (
           <li key={link.name} className='uppercase'>
-            <Link href={link.href} onClick={onClick && onClick}>
-              {link.name}
-            </Link>
+            <Link href={link.href}>{link.name}</Link>
           </li>
         ))}
       </>
@@ -73,7 +71,7 @@ export default function HomeLinks({ onClick, justLinks }) {
             whileTap={{ scale: 0.9 }}
             variants={liVariants}
           >
-            <Link href={link.href} onClick={onClick && onClick}>
+            <Link href={link.href} onClick={onClick}>
               {link.name}
             </Link>
           </motion.li>

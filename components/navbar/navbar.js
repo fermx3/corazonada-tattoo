@@ -77,7 +77,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className='sticky top-20 left-0 right-0 mb-20 text-3xl flex flex-col gap-10 h-fill-navbar w-full text-center justify-center align-center z-40'
+            className='fixed top-0 p-10 left-0 right-0 mb-20 text-3xl flex flex-col gap-10 h-dvh w-full text-center justify-center align-center -z-10 glass-strong'
             initial={{ opacity: 0, y: -100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -100, scale: 0.8 }}
