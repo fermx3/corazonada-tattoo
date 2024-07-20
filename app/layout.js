@@ -62,7 +62,9 @@ export default function RootLayout({ children }) {
             `,
         }}
       />
-      <body className={`${kavoon.variable} ${poppins.className}`}>
+      <body
+        className={`${kavoon.variable} ${poppins.className} grid grid-rows-[auto_1fr_auto] min-h-dvh`}
+      >
         <Navbar />
         {children}
         <Footer />

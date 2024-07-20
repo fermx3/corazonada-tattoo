@@ -37,7 +37,7 @@ export default function HeroSection() {
           autoPlay
           loop
           muted
-          className='lg:h-dvh h-full w-full object-cover'
+          className='lg:h-screen h-full w-full object-cover'
         >
           <source src='/videos/main.mp4' type='video/mp4' />
         </video>

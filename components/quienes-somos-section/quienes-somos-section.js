@@ -9,7 +9,7 @@ import { frameVariants, slideRightVariants } from '@/lib/framer-variants';
 export default function QuienesSomosSection() {
   return (
     <section
-      className='min-h-dvh bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20'
+      className='min-h-screen bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20'
       id='quienes-somos'
     >
       <motion.div
