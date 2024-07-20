@@ -9,7 +9,7 @@ export default async function TatuadoresInvitadosGrid() {
     return (
       <div className='text-center mt-10'>
         <p className='text-3xl'>
-          Por el momento no hay tatuadores disponibles.
+          Pronto verás aquí a nuestros artistas invitados.
         </p>
       </div>
     );
