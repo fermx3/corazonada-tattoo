@@ -7,7 +7,6 @@ export default function ErrorPage() {
     <div className='flex flex-col items-center justify-center gap-10'>
       <h1 className='text-4xl'>Página no encontrada</h1>
       <Button href='/'>Volver al inicio</Button>
-      <Link
     </div>
   );
 }
