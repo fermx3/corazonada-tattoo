@@ -10,7 +10,7 @@ export default function ContactoSection() {
   return (
     <section
       id='contacto'
-      className='bg-contacto bg-no-repeat bg-cover flex items-center justify-center py-32'
+      className='bg-contacto bg-no-repeat bg-cover flex items-center justify-center py-32 bg-fixed shadow-inner'
     >
       <BigCard>
         <motion.div

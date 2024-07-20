@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function EstudioPrivadoSection() {
   return (
-    <section className='min-h-screen bg-estudio-privado bg-no-repeat bg-cover flex items-center justify-center'>
+    <section className='min-h-screen bg-estudio-privado bg-no-repeat bg-cover flex items-center justify-center bg-fixed shadow-inner'>
       <BigCard>
         <motion.div
           variants={frameVariants}

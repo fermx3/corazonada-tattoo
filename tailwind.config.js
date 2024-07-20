@@ -27,7 +27,7 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'estudio-privado': 'url("/images/home/sala.jpg")',
-        contacto: 'url("https://picsum.photos/1200/800")',
+        contacto: 'url("/images/home/sala.jpg")',
         fachada: 'url("/images/home/fachada.jpg")',
       },
       gridTemplateColumns: {
