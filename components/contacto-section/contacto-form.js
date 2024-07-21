@@ -32,11 +32,14 @@ export default function ContactoForm() {
     setMessage('');
     const response = await onSubmitContactForm(data);
     if (response.status === 200) {
-      setMessage('Informacion enviada correctamente');
+      setMessage(
+        'Informacion enviada correctamente, pronto nos pondremos en contacto contigo.'
+      );
+      reset();
     } else {
-      setMessage('Error al enviar la informacion');
+      console.log('error', response);
+      setMessage('Error al enviar la informacion. Porfavor intenta de nuevo.');
     }
-    reset();
   };
 
   return (
