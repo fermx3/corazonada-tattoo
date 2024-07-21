@@ -1,8 +1,6 @@
 import PostContent from '@/components/blog-post/post-content';
-import PostLikes from '@/components/blog-post/post-likes';
 import SideBar from '@/components/blog-post/sidebar';
-import Button from '@/components/button/button';
-import { addLikeToPost, getBlogPost } from '@/lib/actions';
+import { getBlogPost } from '@/lib/actions';
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -24,7 +22,7 @@ export async function generateMetadata({ params }, parent) {
 export default async function BlogPostPage({ params }) {
   const post = await getBlogPost(params.slug);
   return (
-    <div className='m-auto flex flex-col pb-20 bg-white'>
+    <div className='m-auto flex flex-col pb-20 bg-white w-screen'>
       <div className='md:mx-10 mx-2 py-10 md:pt-16 pt-10 px-5 w-fill'>
         <div className='max-w-screen-lg mx-auto'>
           <h1 className='text-5xl blog-title'>{post.title}</h1>

@@ -2,6 +2,8 @@ import Image from 'next/image';
 import TatuadoresInvitadosGrid from './tatuadores-invitados-grid';
 import ImageContainer from '../images/image-container';
 import TatuadoresInvitadosTexto from './tatuadores-invitados-texto';
+import { Suspense } from 'react';
+import LoaderWithContainer from '../ui/loader-with-container';
 
 export default function TatuadoresInvitadosSection() {
   return (
@@ -18,7 +20,9 @@ export default function TatuadoresInvitadosSection() {
         </ImageContainer>
         <TatuadoresInvitadosTexto />
       </div>
-      <TatuadoresInvitadosGrid />
+      <Suspense fallback={<LoaderWithContainer />}>
+        <TatuadoresInvitadosGrid />
+      </Suspense>
     </section>
   );
 }

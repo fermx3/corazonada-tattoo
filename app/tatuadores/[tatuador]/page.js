@@ -41,7 +41,7 @@ export default async function ArtistPage({ params }) {
 
   return (
     <>
-      <div className='text-black m-auto flex flex-col pb-20'>
+      <div className='text-black m-auto flex flex-col pb-20 w-screen'>
         <div className='h-72 w-full relative'>
           <Image
             src={portada ? portada : 'https://picsum.photos/1200/800'}
@@ -57,7 +57,7 @@ export default async function ArtistPage({ params }) {
         <div className='-mt-40 relative max-w-screen-xl grid grid-cols-responsive justify-items-center gap-8 p-5 lg:mx-auto mx-0'>
           <div className='w-80'>
             <TatuadorCard image={image} name={name} desc={desc} />
-            <div className='mt-10 flex flex-wrap justify-center'>
+            <div className='mt-10 flex flex-wrap justify-center gap-5'>
               <Button href='/#contacto' className='mt-5'>
                 Agenda tu cita
               </Button>
