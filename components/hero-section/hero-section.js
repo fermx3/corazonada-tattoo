@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section className='flex lg:flex-col items-center justify-center relative overflow-hidden flex-col-reverse'>
       <motion.div
-        className='relative flex flex-col items-center w-screen lg:absolute text-white lg:p-0 lg:bg-none bg-fachada bg-center bg-fixed shadow-inner'
+        className='relative flex flex-col items-center w-screen lg:absolute text-white lg:p-0 lg:bg-none bg-fachada bg-fixed shadow-inner bg-top lg:bg-center bg-cover bg-no-repeat'
         variants={frameVariants}
         initial='hidden'
         whileInView='visible'
