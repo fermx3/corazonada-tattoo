@@ -21,6 +21,7 @@ module.exports = {
         'yellow-primary': '#ffd644',
         'green-primary': '#18381d',
         'green-secondary': '#7eaa7e',
+        'green-gradient': 'linear-gradient(90deg, #18381d 0%, #7eaa7e 100%)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

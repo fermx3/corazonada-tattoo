@@ -5,27 +5,22 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { growVariants } from '../tatuadores-invitados-section/tatuajes-grid';
 import { frameVariants, slideRightVariants } from '@/lib/framer-variants';
+import Carousel from './carousel';
 
 export default function QuienesSomosSection() {
   return (
     <section
-      className='min-h-screen bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20'
+      className='min-h-screen bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-10'
       id='quienes-somos'
     >
       <motion.div
-        className='max-w-lg rounded-3xl shadow-xl'
+        className='max-w-lg'
         variants={growVariants}
         initial='initial'
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <Image
-          src='/images/home/azul-1.jpg'
-          alt='Logo'
-          width={400}
-          height={300}
-          className='rounded-3xl'
-        />
+        <Carousel images={['azul.jpg', 'rosa.jpg', 'cafe.jpg', 'fruta.jpg']} />
       </motion.div>
       <motion.div
         className='max-w-lg text-white'
