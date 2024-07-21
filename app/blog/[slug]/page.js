@@ -1,6 +1,8 @@
 import PostContent from '@/components/blog-post/post-content';
 import SideBar from '@/components/blog-post/sidebar';
-import { getBlogPost } from '@/lib/actions';
+import { getBlogPost, getBlogPosts } from '@/lib/actions';
+
+const blogPosts = await getBlogPosts();
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -19,8 +21,21 @@ export async function generateMetadata({ params }, parent) {
   };
 }
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 export default async function BlogPostPage({ params }) {
   const post = await getBlogPost(params.slug);
+
+  if (!post) {
+    notFound();
+  }
+
   return (
     <div className='m-auto flex flex-col pb-20 bg-white w-screen'>
       <div className='md:mx-10 mx-2 py-10 md:pt-16 pt-10 px-5 w-fill'>

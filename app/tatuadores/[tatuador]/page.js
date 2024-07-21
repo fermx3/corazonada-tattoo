@@ -3,6 +3,7 @@ import TatuadorCard from '@/components/tatuadores-invitados-section/tatuador-car
 import TatuajesGrid from '@/components/tatuadores-invitados-section/tatuajes-grid';
 import { getAllTatuadores, getTatuador } from '@/lib/actions';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 const tatuadoresInvitados = await getAllTatuadores();
 
@@ -36,6 +37,10 @@ export async function generateStaticParams() {
 
 export default async function ArtistPage({ params }) {
   const tatuadorData = await getTatuador(params.tatuador);
+
+  if (!tatuadorData) {
+    notFound();
+  }
 
   const { name, desc, image, portada, slug, tatuajes } = tatuadorData;
 
