@@ -15,7 +15,7 @@ export default function HeroSection() {
         whileInView='visible'
         viewport={{ once: true }}
       >
-        <div className='bg-black/30 w-full h-full lg:h-screen flex justify-center flex-col items-center py-20'>
+        <div className='bg-black/30 w-full h-full lg:h-screen flex justify-center flex-col items-center py-20 z-[1]'>
           <motion.h2
             className='text-3xl text-center w-full drop-shadow-2xl'
             variants={slideDownVariants}
