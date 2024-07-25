@@ -69,10 +69,10 @@ export default function TatuajesGrid({ tatuajes, slug }) {
       {isModalOpen && (
         <Modal handleClick={handleClick}>
           <div className='embla__viewport' ref={emblaMainRef}>
-            <div className='embla__container ml-slides'>
+            <div className='embla__container'>
               {Array.from({ length: tatuajes }).map((_, index) => (
                 <div
-                  className='embla__slide pl-5 xl:basis-[50%!important] lg:basis-[55%!important] flex justify-center'
+                  className='embla__slide xl:basis-[50%!important] lg:basis-[55%!important]'
                   key={index}
                 >
                   <div className='w-90vw h-90vw lg:h-[80vh] lg:w-[80vh] relative top-0 left-0 rounded-3xl shadow-xl overflow-hidden'>

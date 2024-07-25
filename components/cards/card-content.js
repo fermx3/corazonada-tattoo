@@ -15,7 +15,7 @@ export default function CardContent({ image, title, desc, url }) {
           src={image}
           alt={`foto de ${title}`}
           fill
-          className='object-cover rounded-3xl p-2'
+          className='object-cover rounded-3xl p-2 object-top'
         />
       </div>
       <motion.div

@@ -10,7 +10,7 @@ import Carousel from './carousel';
 export default function QuienesSomosSection() {
   return (
     <section
-      className='min-h-screen bg-green-secondary p-10 py-20 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-10'
+      className='min-h-screen bg-green-secondary px-5 py-10 flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-10'
       id='quienes-somos'
     >
       <motion.div

@@ -79,13 +79,18 @@ h6 {
 
 .embla__viewport {
   overflow: hidden;
+  --slide-spacing: 1.25rem;
 }
 .embla__container {
   display: flex;
+  margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
   flex: 0 0 90%;
   min-width: 0;
+  padding-left: var(--slide-spacing);
+  display: flex;
+  justify-content: center;
 }
 
 /* h1 {
