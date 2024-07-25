@@ -13,6 +13,7 @@ module.exports = {
         '100vw': '100vw',
         'fill-navbar': 'calc(100dvh - 5rem)',
         fill: '-webkit-fill-available',
+        slides: 'calc(1.25rem * -1)',
       },
       colors: {
         'soft-pink': '#fbdfe9',

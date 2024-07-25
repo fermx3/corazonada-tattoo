@@ -69,15 +69,18 @@ export default function TatuajesGrid({ tatuajes, slug }) {
       {isModalOpen && (
         <Modal handleClick={handleClick}>
           <div className='embla__viewport' ref={emblaMainRef}>
-            <div className='embla__container'>
+            <div className='embla__container ml-slides'>
               {Array.from({ length: tatuajes }).map((_, index) => (
-                <div className='embla__slide mx-5' key={index}>
-                  <div className='w-90vw h-90vw lg:h-90vh relative top-0 left-0'>
+                <div
+                  className='embla__slide pl-5 xl:basis-[50%!important] lg:basis-[55%!important] flex justify-center'
+                  key={index}
+                >
+                  <div className='w-90vw h-90vw lg:h-[80vh] lg:w-[80vh] relative top-0 left-0 rounded-3xl shadow-xl overflow-hidden'>
                     <Image
                       src={`/images/tatuadores/${slug}/${index}.jpg`}
                       alt=''
                       fill
-                      className='object-cover lg:object-contain lg:bg-white lg:py-2 rounded-3xl shadow-xl'
+                      className='object-cover'
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                       placeholder='blur'
                       blurDataURL={`/images/tatuadores/${slug}/${index}.jpg`}
