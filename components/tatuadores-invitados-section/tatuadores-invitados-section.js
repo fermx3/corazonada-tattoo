@@ -11,7 +11,7 @@ export default function TatuadoresInvitadosSection() {
       <div className='flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20 my-20 max-w-screen overflow-hidden	'>
         <ImageContainer>
           <Image
-            src='https://picsum.photos/300/400'
+            src='/images/home/tatuadores-invitados.png'
             alt=''
             width={400}
             height={300}

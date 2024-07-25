@@ -28,7 +28,7 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'estudio-privado': 'url("/images/home/sala.jpg")',
-        contacto: 'url("/images/home/sala.jpg")',
+        contacto: 'url("/images/home/contacto.png")',
         fachada: 'url("/images/home/fachada.jpg")',
       },
       gridTemplateColumns: {
