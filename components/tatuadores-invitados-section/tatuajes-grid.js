@@ -27,11 +27,10 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   const [modalOpenIndex, setModalOpenIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [emblaMainRef, emblaMainApi] = useEmblaCarousel({
+  const [emblaMainRef] = useEmblaCarousel({
     loop: true,
     startIndex: modalOpenIndex,
   });
-  const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel();
 
   const handleClick = (index) => {
     setIsModalOpen(!isModalOpen);
@@ -44,7 +43,6 @@ export default function TatuajesGrid({ tatuajes, slug }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delayChildren: 0.5, staggerChildren: 0.1 }}
-      ref={emblaThumbsRef}
     >
       {Array.from({ length: tatuajes }).map((_, i) => (
         <motion.div
