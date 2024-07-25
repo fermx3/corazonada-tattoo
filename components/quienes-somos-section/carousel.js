@@ -11,10 +11,10 @@ export default function Carousel({ images }) {
   ]);
 
   return (
-    <div className='overflow-hidden -mx-10 lg:mx-0' ref={emblaRef}>
-      <div className='flex p-10'>
+    <div className='embla__viewport -mx-10 lg:mx-0' ref={emblaRef}>
+      <div className='embla__container p-10'>
         {images.map((image, index) => (
-          <div className='min-w-0 flex-[0_0_100%] mx-5 rounded-3xl' key={index}>
+          <div className='embla__slide mx-5 rounded-3xl' key={index}>
             <Image
               src={`/images/home/${image}`}
               alt=''

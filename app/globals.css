@@ -77,6 +77,17 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 /* h1 {
   color: black;
   -webkit-text-fill-color: transparent; 

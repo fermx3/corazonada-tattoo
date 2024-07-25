@@ -25,9 +25,9 @@ export default function Modal({ children, handleClick }) {
           className='p-2'
         />
       </div>
-      <div className='relative p-5 rounded-lg glass flex w-screen h-100vw w-100vw'>
-        {children}
-      </div>
+      {/* <div className='relative p-5 rounded-lg glass flex w-screen h-100vw w-100vw'> */}
+      {children}
+      {/* </div> */}
     </motion.div>
   );
 }
