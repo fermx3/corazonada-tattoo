@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Modal from '../ui/modal';
-import { useCallback, useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 

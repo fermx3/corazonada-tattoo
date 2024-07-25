@@ -14,7 +14,10 @@ export default function Carousel({ images }) {
     <div className='embla__viewport -mx-10 lg:mx-0' ref={emblaRef}>
       <div className='embla__container p-10'>
         {images.map((image, index) => (
-          <div className='embla__slide mx-5 rounded-3xl' key={index}>
+          <div
+            className='embla__slide basis-[90%] mx-5 rounded-3xl'
+            key={index}
+          >
             <Image
               src={`/images/home/${image}`}
               alt=''
