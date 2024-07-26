@@ -26,7 +26,7 @@ export default function TatuadorCard({ image, name, desc }) {
             alt={name}
             fill
             className='object-cover object-top rounded-3xl p-2'
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            sizes='(max-width: 768px) 300px, 500px'
             placeholder='blur'
             blurDataURL={image}
           />
