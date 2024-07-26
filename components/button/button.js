@@ -35,7 +35,7 @@ export default function Button({
   }
 
   return (
-    <Link href={href} onClick={onClick && onClick}>
+    <Link href={href} onClick={onClick && onClick} className='md:w-fit w-full'>
       <motion.div
         whileTap={{ scale: 0.9 }}
         className={customButtonStyles[buttonType] || customButtonStyles.primary}
