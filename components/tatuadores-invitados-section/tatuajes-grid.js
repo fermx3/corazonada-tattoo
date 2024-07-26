@@ -75,7 +75,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
                   className='embla__slide xl:basis-[50%!important] lg:basis-[55%!important]'
                   key={index}
                 >
-                  <div className='w-90vw h-90vw lg:h-[80vh] lg:w-[80vh] relative top-0 left-0 rounded-3xl shadow-xl overflow-hidden'>
+                  <div className='w-90vw h-90vw lg:h-[80vh] lg:w-[80vh] relative top-0 left-0 rounded-3xl shadow-xl overflow-hidden mb-10'>
                     <Image
                       src={`/images/tatuadores/${slug}/${index}.jpg`}
                       alt=''

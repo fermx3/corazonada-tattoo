@@ -43,7 +43,7 @@ export default function Modal({ children, handleClick, emblaApi }) {
         />
       </div>
       {children}
-      <div className='embla__controls mt-2'>
+      <div className='embla__controls mt-[-2.5rem]'>
         <div className='embla__buttons hidden lg:grid'>
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
