@@ -6,7 +6,7 @@ import { growVariants } from '../tatuadores-invitados-section/tatuajes-grid';
 export default function ImageContainer({ children }) {
   return (
     <motion.div
-      className='max-w-lg rounded-3xl shadow-xl'
+      className='max-w-lg rounded-3xl shadow-xl overflow-hidden'
       variants={growVariants}
       initial='initial'
       whileInView='visible'

@@ -8,14 +8,13 @@ import LoaderWithContainer from '../ui/loader-with-container';
 export default function TatuadoresInvitadosSection() {
   return (
     <section className='bg-soft-pink px-5 py-10' id='tatuadores-invitados'>
-      <div className='flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20 my-20 max-w-screen overflow-hidden	'>
+      <div className='flex items-center justify-center flex-wrap lg:flex-row flex-col-reverse gap-20 my-20 max-w-screen'>
         <ImageContainer>
           <Image
             src='/images/home/tatuadores-invitados.png'
             alt=''
             width={400}
             height={300}
-            className='rounded-3xl'
           />
         </ImageContainer>
         <TatuadoresInvitadosTexto />
