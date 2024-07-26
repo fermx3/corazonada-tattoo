@@ -27,7 +27,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
   const [modalOpenIndex, setModalOpenIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [emblaMainRef] = useEmblaCarousel({
+  const [emblaMainRef, emblaApi] = useEmblaCarousel({
     loop: true,
     startIndex: modalOpenIndex,
   });
@@ -67,7 +67,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
         </motion.div>
       ))}
       {isModalOpen && (
-        <Modal handleClick={handleClick}>
+        <Modal handleClick={handleClick} emblaApi={emblaApi}>
           <div className='embla__viewport' ref={emblaMainRef}>
             <div className='embla__container'>
               {Array.from({ length: tatuajes }).map((_, index) => (
