@@ -14,13 +14,15 @@ export default async function TatuadoresInvitadosGrid() {
       </div>
     );
 
+  console.log(tatuadoresInvitados);
+
   return (
     <CardsContainer>
       {tatuadoresInvitados.map((tatuador, index) => (
         <CardContent
           key={index}
           title={tatuador.name}
-          desc={tatuador.desc}
+          desc={`${tatuador.desc.slice(0, 180)}...`}
           image={tatuador.image}
           url={`/tatuadores/${tatuador.slug}`}
         />

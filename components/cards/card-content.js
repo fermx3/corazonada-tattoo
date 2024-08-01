@@ -31,7 +31,9 @@ export default function CardContent({ image, title, desc, url }) {
         >
           {title}
         </motion.p>
-        <motion.p variants={slideDownVariants}>{desc}</motion.p>
+        <motion.p variants={slideDownVariants} className='whitespace-pre-line'>
+          {desc}
+        </motion.p>
         <Button href={url}>Ver más</Button>
       </motion.div>
     </Card>

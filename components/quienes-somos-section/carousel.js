@@ -12,7 +12,7 @@ export default function Carousel({ images }) {
 
   return (
     <div className='embla__viewport' ref={emblaRef}>
-      <div className='embla__container py-10 '>
+      <div className='embla__container py-10'>
         {images.map((image, index) => (
           <div
             className='embla__slide rounded-3xl basis-[80%!important]'

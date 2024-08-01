@@ -37,10 +37,15 @@ export default function TatuadorCard({ image, name, desc }) {
           initial='hidden'
           animate='visible'
         >
-          <motion.h1 className='text-3xl' variants={slideDownVariants}>
+          <motion.h1 className='text-3xl mb-2' variants={slideDownVariants}>
             {name}
           </motion.h1>
-          <motion.p variants={slideDownVariants}>{desc}</motion.p>
+          <motion.p
+            variants={slideDownVariants}
+            className='whitespace-pre-line'
+          >
+            {desc}
+          </motion.p>
         </motion.div>
       </Card>
     </motion.div>
