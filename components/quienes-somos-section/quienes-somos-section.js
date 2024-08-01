@@ -36,7 +36,7 @@ export default function QuienesSomosSection() {
           className='text-6xl mb-3 text-soft-pink'
           variants={slideRightVariants}
         >
-          El mejor estudio privado
+          Estudio privado de tatuajes
         </motion.h2>
         <motion.p variants={slideRightVariants}>
           Somos un estudio de tatuajes en Playa del Carmen, México. Nos
