@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar/navbar';
 import WhatsappButton from '@/components/whatsapp-button/whatsapp-button';
 import Footer from '@/components/footer/footer';
 import Script from 'next/script';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const kavoon = Kavoon({
   weight: '400',
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
             `,
         }}
       />
+      <GoogleTagManager gtmId='G-SVE9ML1DQN' />
       <body
         className={`${kavoon.variable} ${poppins.className} grid grid-rows-[auto_1fr_auto] min-h-dvh`}
       >
