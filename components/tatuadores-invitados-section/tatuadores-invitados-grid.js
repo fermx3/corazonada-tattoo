@@ -14,8 +14,6 @@ export default async function TatuadoresInvitadosGrid() {
       </div>
     );
 
-  console.log(tatuadoresInvitados);
-
   return (
     <CardsContainer>
       {tatuadoresInvitados.map((tatuador, index) => (
