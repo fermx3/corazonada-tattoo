@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
       <div className='flex flex-col md:flex-row justify-between border-white border-t pt-8'>
-        <p>
+        <p className='max-w-64 md:max-w-full'>
           {`© ${year} Corazonada Tattoo Studio | by`}{' '}
           <a
             href='http://www.webloom.com.mx'
