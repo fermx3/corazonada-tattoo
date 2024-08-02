@@ -47,7 +47,7 @@ export default function TatuajesGrid({ tatuajes, slug }) {
       {Array.from({ length: tatuajes }).map((_, i) => (
         <motion.div
           key={i}
-          className='h-80 w-80 bg-gray-300 rounded-3xl relative shadow-md hover:shadow-xl cursor-pointer overflow-hidden'
+          className='h-80 w-80 bg-gray-300 rounded-3xl relative shadow-md hover:shadow-xl cursor-pointer overflow-hidden pulse'
           onClick={() => handleClick(i)}
           whileTap={{ scale: 0.95 }}
           initial={'initial'}

@@ -23,6 +23,7 @@ export default async function TatuadoresInvitadosGrid() {
           desc={`${tatuador.desc.slice(0, 180)}...`}
           image={tatuador.image}
           url={`/tatuadores/${tatuador.slug}`}
+          tatuador
         />
       ))}
     </CardsContainer>

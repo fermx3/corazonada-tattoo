@@ -178,6 +178,10 @@ h6 {
   -webkit-text-stroke: 2px black;
 } */
 
+.translatex:hover ~ .translatex {
+  transform: translateX(1rem);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

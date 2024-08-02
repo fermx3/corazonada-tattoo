@@ -35,6 +35,7 @@ module.exports = {
       gridTemplateColumns: {
         responsive: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))',
         'responsive-sm': 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+        overlay: 'repeat(5, 3rem)',
       },
       dropShadow: {
         white: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',

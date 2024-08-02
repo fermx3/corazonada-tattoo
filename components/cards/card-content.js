@@ -6,8 +6,9 @@ import Card from './card';
 
 import { motion } from 'framer-motion';
 import { frameVariants, slideDownVariants } from '@/lib/framer-variants';
+import Link from 'next/link';
 
-export default function CardContent({ image, title, desc, url }) {
+export default function CardContent({ image, title, desc, url, tatuador }) {
   return (
     <Card>
       <div className='w-full h-56 relative mb-3'>
@@ -34,6 +35,28 @@ export default function CardContent({ image, title, desc, url }) {
         <motion.p variants={slideDownVariants} className='whitespace-pre-line'>
           {desc}
         </motion.p>
+        {tatuador && (
+          <motion.div
+            variants={slideDownVariants}
+            className='grid grid-cols-overlay'
+          >
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className='h-16 w-16 relative rounded-full transition-transform translatex border-2 border-white'
+              >
+                <Link href={url}>
+                  <Image
+                    src={`/images${url}/${i}.jpg`}
+                    alt=''
+                    fill
+                    className='object-cover rounded-full'
+                  />
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        )}
         <Button href={url}>Ver más</Button>
       </motion.div>
     </Card>
