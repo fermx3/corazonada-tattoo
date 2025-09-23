@@ -3,6 +3,9 @@ import Button from '../button/button';
 import { addLikeToPost, getFeaturedPosts } from '../../lib/actions';
 import FeaturedPosts from './featured-posts';
 
+// force this component to be dynamic (no caching)
+export const dynamic = 'force-dynamic';
+
 const handleLike = async (slug) => {
   'use server';
   await addLikeToPost(slug);

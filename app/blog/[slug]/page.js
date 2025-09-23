@@ -2,7 +2,7 @@ import PostContent from '@/components/blog-post/post-content';
 import SideBar from '@/components/blog-post/sidebar';
 import { getBlogPost, getBlogPosts } from '@/lib/actions';
 
-const blogPosts = await getBlogPosts();
+// const blogPosts = await getBlogPosts();
 
 export async function generateMetadata({ params }, parent) {
   // read route params
@@ -24,9 +24,11 @@ export async function generateMetadata({ params }, parent) {
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const blogPosts = await getBlogPosts();
+  const paths = blogPosts.map((post) => ({
     slug: post.slug,
   }));
+  return paths;
 }
 
 export default async function BlogPostPage({ params }) {
@@ -34,6 +36,7 @@ export default async function BlogPostPage({ params }) {
 
   if (!post) {
     notFound();
+    return;
   }
 
   return (
