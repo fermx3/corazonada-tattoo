@@ -9,7 +9,7 @@ export default function PostLikes({ likes, slug, handleClick, hasLiked }) {
   const [liked, setLiked] = useState(hasLiked);
 
   return (
-    <div className='flex flex-wrap items-between shadow-md p-2 rounded-lg w-full bg-soft-pink items-center h-fit'>
+    <div className='flex flex-wrap justify-center md:justify-start shadow-md p-2 rounded-lg w-full bg-soft-pink items-center h-fit'>
       {liked ? (
         <div className='flex items-center gap-2 px-5 py-2.5'>
           <Image src='/icons/heart-filled.svg' alt='heart' width={20} height={20} />
@@ -26,8 +26,8 @@ export default function PostLikes({ likes, slug, handleClick, hasLiked }) {
           <Image src='/icons/heart.svg' alt='heart' width={20} height={20} />
         </Button>
       )}
-      <p className='ml-2 text-center md:text-left w-full md:w-fit'>
-        {displayedLikes} {displayedLikes === 1 ? 'like' : 'likes'}
+      <p className='ml-2 text-center w-full md:text-left md:w-fit'>
+        {displayedLikes} me gusta
       </p>
     </div>
   );
