@@ -2,6 +2,7 @@ import PostLikes from './post-likes';
 import Button from '../button/button';
 import { addLikeToPost, getFeaturedPosts } from '../../lib/actions';
 import FeaturedPosts from './featured-posts';
+import { cookies } from 'next/headers';
 
 // force this component to be dynamic (no caching)
 export const dynamic = 'force-dynamic';
@@ -13,10 +14,13 @@ const handleLike = async (slug) => {
 
 const posts = await getFeaturedPosts();
 
-export default function SideBar({ post, postSlug }) {
+export default async function SideBar({ post, postSlug }) {
+  const cookieStore = await cookies();
+  const hasLiked = !!cookieStore.get(`liked_${post.slug}`);
+
   return (
     <div className='md:col-span-1 col-span-2 mb-5 flex flex-wrap gap-5 justify-center h-fit'>
-      <PostLikes likes={post.likes} slug={post.slug} handleClick={handleLike} />
+      <PostLikes likes={post.likes} slug={post.slug} handleClick={handleLike} hasLiked={hasLiked} />
       <FeaturedPosts featuredPosts={posts} postSlug={postSlug} />
       <Button href='/blog' buttonType='secondary'>
         Todos los posts
